@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/climate-crew/d3-climate-visualization/badge)](https://www.codefactor.io/repository/github/climate-crew/d3-climate-visualization)
+
 # Is it Getting Hot in Here? Global Changes in Extreme Weather
 
 **Goal:** Helping to illustrate global changes in extreme weather through interactive visualization.
