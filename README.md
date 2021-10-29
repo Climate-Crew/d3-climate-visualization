@@ -8,7 +8,7 @@ We hope you find our visualizations both enjoy our visualizations and enlighteni
 
 ## Contributors
 
-**Alejandro Romano.** Brown University alumni pursuing a Master's program at Harvard University.
-**Matthew Stewart.** Ph.D. Candidate in Engineering Sciences and Data Science at Harvard University.
-**Nada Tarkhan.** Ph.D. Candidate at the Massachusetts Insitute of Technology.
-**Max Urbany.** Student pursuing a Master's of Data Science at Harvard University.
+**Alejandro Romano.** Brown University alumni pursuing a Master's program at Harvard University. <br>
+**Matthew Stewart.** Ph.D. Candidate in Engineering Sciences and Data Science at Harvard University. <br>
+**Nada Tarkhan.** Ph.D. Candidate at the Massachusetts Insitute of Technology. <br>
+**Max Urbany.** Student pursuing a Master's of Data Science at Harvard University. <br>
