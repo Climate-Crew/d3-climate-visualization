@@ -1,6 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/climate-crew/d3-climate-visualization/badge)](https://www.codefactor.io/repository/github/climate-crew/d3-climate-visualization)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-![](https://img.shields.io/github/repo-size/Climate-Crew/d3-climate-visualization/Javascript.svg?label=Repo%20size&style=flat-square)
+![](https://img.shields.io/github/repo-size/Climate-Crew/d3-climate-visualization.svg?label=Repo%20size&style=flat-square)
 [![standard.js](https://img.shields.io/badge/code%20style-standardjs-%23f3df49)](https://standardjs.com/)
 
 
