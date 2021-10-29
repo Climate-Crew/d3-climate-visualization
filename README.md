@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/climate-crew/d3-climate-visualization/badge)](https://www.codefactor.io/repository/github/climate-crew/d3-climate-visualization)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 # Is it Getting Hot in Here? Global Changes in Extreme Weather
 
