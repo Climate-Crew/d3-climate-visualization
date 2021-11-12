@@ -99,6 +99,11 @@ body svg {
     position: sticky;
     top: var(--offset);
 
+    position: fixed;
+    padding: 5em 0;
+    /* background: #ffffff; */
+    color: var(--text-light);
+
 
     /* border: none; */
     /* box-shadow: 0 2px 40px 0 darkgrey; */
@@ -333,12 +338,7 @@ Navigation
   line-height: 2;
 }
 
-.sidebar {
-  position: fixed;
-  padding: 5em 0;
-  /* background: #ffffff; */
-  color: var(--text-light);
-}
+
 
 .anchor:hover {
   color: var(--primary-color);
@@ -574,197 +574,7 @@ h2.graphtitle {
   color: white;
 }
 
-/* INDICI CAMBIAMENTO CLIMATICO */
-#climate-index {
-  color: white;
-  font-family: "Crimson Text", serif;
-  text-align: center;
-  padding-top: 3em;
-}
 
-#climate-index i {
-  font-style: normal !important;
-}
-
-#climate-index .rosa {
-  padding-top: 10em;
-}
-
-#climate-index .index {
-  font-family: "Butler", serif;
-  font-size: 2.2em;
-  line-height: 0.5em;
-}
-
-#climate-index .index-title {
-  font-size: 0.8em;
-  font-family:"Poppins", sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-}
-
-#climate-index .btn {
-  background: transparent;
-  margin: 10px;
-  color: white;
-  font-size: 1.3em;
-  font-family:"Poppins", sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border: 1px solid white;
-  width: 2em;
-  height: 2em;
-  padding: 0.35em 0.32em 0.35em 0.37em;
-  border-radius: 50%;
-  transition: 0.3s ease;
-  margin-top: 1em;
-}
-
-#climate-index .btn:hover {
-  background: rgba(255,255,255,0.3);
-  box-shadow: none;
-  border-color: white;
-}
-
-#climate-index .btn:active {
-  background: #eaeaea !important;
-  box-shadow: none;
-  border-color: #eaeaea;
-}
-
-#climate-index .btn:focus{
-  background: white;
-  outline-width: 0;
-  color: #ff4a60;
-}
-
-#climate-index .card {
-  margin-top: 2em;
-}
-
-#climate-index .panel {
-  width:100%;
-  border: none;
-  background: rgba(0,0,0,.1);
-  padding: 0px;
-  margin: 0px;
-  border-radius: 0;
-}
-
-#climate-index .panel-group {
-  margin-top: 2em;
-}
-
-#climate-index .container-fluid {
-  padding: 0;
-}
-
-/* TIMELINE */
-
-#timeline {
-  width: 85%;
-  margin-bottom: 2.5em;
-  margin-left: 8%;
-  margin-right: 5%;
-  font-family: 'Poppins';
-  letter-spacing:'1px';
-  font-size: 1em;
-}
-
-#cops:hover{
-cursor:pointer;
-
-}
-
-.st3 .st4 .st5: hover{
-  cursor: pointer;
-}
-
-#timeline i{
-  letter-spacing:1px;
-}
-
-.event {
-  font-family: "Crimson Text";
-  font-size: 1.15em;
-  color: #272727;
-  position: absolute;
-  top: 1em;
-}
-
-.event h2 {
-  line-height: 2em;
-  margin-top: 0;
-}
-
-.event hr {
-  border-color: #ff4a60;
-  margin: 0.5em 0em 0.5em 0em;
-}
-
-/* GRAFICO TEMI COP */
-
-#graph02 .st4{
-cursor: pointer;
-transition: 0.3s ease-in-out;
-}
-
-/*.st4:hover {
-  opacity: 0.2 !important;
-}*/
-
-#cop {
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-#cop .st6 {
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-.st4.hover {
-  opacity:1 !important;
-}
-
-/* Timeline adattamento */
-.st-r {
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.st-r:hover {
-  fill: #FF8DA0 !important;
-}
-
-#adaptation-timeline .container {
-  width: 74%;
-  padding-bottom: 8%;
-}
-
-#adaptation .fonte {
-  margin-bottom: 6em;
-}
-
-/* GRAFICO BARRE */
-
-#graph03{
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-
-#graph03 .h2{
- text-transform: none;
- font-family: "Crimson-text";
-}
-
-
-#adaptation-bar{
-  cursor: pointer;
-}
 
 /* IMBUTO */
 
@@ -1077,7 +887,7 @@ body.loading .modal {
 
 #vuln-read .heatmap-bottoni {
   text-align: center;
-  margin: 2em auto 2.5em auto;
+  margin: 2em auto 2.5em;
 }
 
 .bottoni {
@@ -1129,7 +939,7 @@ body.loading .modal {
 
   #nav li {
     display: block;
-    margin: 0 2em 0 2em;
+    margin: 0 2em;
     height: 48px;
   }
 
