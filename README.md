@@ -10,7 +10,7 @@
 
 In recent years, we have grown used to climate records being broken on a regular basis. While this may not seem important at first, it is in fact strong evidence that displays the impact that global warming is having upon our world. With our project, we would like to provide people with visualizations that make the impact of climate change clear and undeniable by focusing on global changes in weather through the prevalence of extreme weather events. We use scraped data from the National Weather Service, extreme weather data from NOAA, as well as other datasets outlined below. All datasets used in these visualizations are publicly available and from reliable government or intergovernmental sources. Links to all data sources are provided for transparency.
 
-We hope you find our visualizations both enjoy our visualizations and enlightening!
+We hope you find our visualizations both enjoy our visualizations and find them enlightening!
 
 ## Contributors
 
