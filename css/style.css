@@ -342,12 +342,10 @@ Navigation
 
 .anchor:hover {
   color: var(--primary-color);
-  ;
 }
 
 .active {
   color: var(--primary-color);
-  ;
 }
 
 .navbar {
@@ -408,46 +406,7 @@ body img {
   max-width: 100%;
 }
 
-.titolo {
-  font-family: "Butler";
-  padding: 100px;
-  font-size: 8em;
-  color: #333;
-  margin: auto;
-  font-weight: normal;
-}
 
-.titolo2 {
-  font-family: "Butler";
-  font-size: 3.5em;
-  margin: auto;
-  font-weight: normal;
-}
-
-.sottotitolo{
-  padding-top: 4px;
-  font-family: "Poppins";
-  font-size: 1em;
-  margin: auto;
-  margin-top: 1.3em;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-h2.graphtitle {
-  font-family: "Butler";
-  font-size: 1.8em;
-  letter-spacing: 0.01em;
-}
-
-.testo {
-  padding-top: 1.5em;
-  font-family: "Crimson Text";
-  font-size: 1.3em;
-  margin: auto;
-  margin-bottom:30px;
-  vertical-align: text-top;
-}
 
 .white {
   color: white;
