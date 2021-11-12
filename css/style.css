@@ -46,10 +46,6 @@
     background: black;
 }
 
-.rosa::selection {
-    background: white; 
-    color: #FF4A60;
-}
 
 i {
   font-style: italic;
@@ -67,19 +63,8 @@ i:active {
   color: white;
 }
 
-#video {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-}
 
-.rosa i{
-  font-style: italic;
-  color: white;
-}
+
 
 body svg {
   width: 100%;
@@ -426,13 +411,13 @@ body img {
 .chiaro {
   width: 100%;
   background-color: whitesmoke;
-  padding: 5em 0 5em 0;
+  padding: 5em 0;
 }
 
 .scuro {
   width: 100%;
   background-color: #8771FF;
-  padding: 5em 0 5em 0;
+  padding: 5em 0;
 }
 
 .scuro i {
@@ -442,7 +427,7 @@ body img {
 .white-bg {
   width: 100%;
   background-color: white;
-  padding: 5em 0 5em 0;
+  padding: 5em 0;
 }
 
 .intro {
@@ -900,23 +885,6 @@ body.loading .modal {
   }
 }
 
-/*@media only screen (max-width: 768px){
-  #nav li {
-    margin: 0;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-.dueColonne {-webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1; 
-    -webkit-column-gap: 1;
-    -moz-column-gap: 1;
-    column-gap: 1;
-    margin-bottom: 30px;}
-}
 
 
 /* Style the header: fixed position (always stay at the top) */
