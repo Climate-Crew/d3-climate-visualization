@@ -223,6 +223,7 @@ body svg {
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
     margin-left: 0px;
     margin-right: 0px;
+    display: flex;
 }
 
 .navbar-nav {
