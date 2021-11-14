@@ -1,0 +1,67 @@
+
+// Variables for the visualization instances
+let areachart, timeline;
+
+// Date parser
+let formatDate = d3.timeFormat("%Y");
+//let parseDate = d3.timeParse("%Y");
+
+// (1) Load data with promises
+
+let promises = [
+	d3.csv("./data/annual-emissions-by-country.csv")
+	// d3.csv("data/annual-emissions-by-region.csv"),
+	// d3.csv("data/annual-emissions-by-world.csv")
+];
+
+Promise.all(promises)
+	.then(function (data) {
+		createVis(data)
+	})
+	.catch(function (err) {
+		console.log(err)
+	});
+
+function createVis(data) {
+
+		console.log(data)
+
+		data[0].forEach((row) => {
+
+			for (let k in row) {
+				if (k != "Year")
+					row[k] = +row[k]
+				if (k == "Year")
+					row[k] = parseDate(row.Year)
+			}
+		});
+        
+        console.log('data loaded')
+
+		// Create an object instance of StackedAreaChart
+		areachart = new StackedAreaChart("global-emissions-stacked-area-chart", data);
+
+		// Create an object instance of Timeline
+		//timeline = new Timeline("global-emissions-timeline", data);
+
+		// Initialize visualization
+		areachart.initVis()
+		//timeline.initVis()
+
+}
+
+function brushed() {
+
+	// Get the extent of the current brush
+	let selectionRange = d3.brushSelection(d3.select(".brush").node());
+
+	// Convert the extent into the corresponding domain values
+	let selectionDomain = selectionRange.map(timeline.x.invert);
+
+	// Apply selection domain to update area chart
+	areachart.x.domain(selectionDomain);
+
+	// Update focus chart
+	// Append brush component
+	areachart.wrangleData();
+}

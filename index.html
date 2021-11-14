@@ -273,6 +273,35 @@
 </section>
 
 
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 offset-1"
+             style="margin-top: 5vh; border: thin solid grey; border-radius: 5px; background: rgba(221,221,221,0.45)">
+
+            <!-- header -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center" style="">
+                    <h1>Global Emissions by Country</h1>
+                </div>
+            </div>
+
+            <!-- graph -->
+            <div class="row justify-content-center" style="height: 60vh">
+                <div class="align-self-center" id="global-emissions-stacked-area-chart" style="height: 100%; width: 100%"></div>
+            </div>
+
+            <!-- brush -->
+            <div class="row justify-content-center" style="height: 15vh">
+                <div class="align-self-center" id="global-emissions-timeline" style="height: 100%; width: 100%"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <section class="scuro" id="about">
     <div id="projects">
         <div class="container">
@@ -427,7 +456,18 @@
         document.getElementById("myBar").style.width = scrolled + "%";
     }</script>
 
+
+<!--Anomalies Visualization-->
 <script src="./js/anomalies.js"></script>
+
+<!-- Stacked Area chart Visualization objects -->
+<script src="./js/emissions/stackedAreaChart.js"></script>
+<script src="./js/emissions/timeline.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="./js/emissions/main.js"></script>
+
+
 </body>
 
 <div class="header">
