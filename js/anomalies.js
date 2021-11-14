@@ -96,8 +96,8 @@ console.log(climateData);
     textWrapper.append("text")
         .attr("class", "spiral-subtitle")
         .attr("x", 0)
-        .attr("y", -outerRadius - 20)
-        .text('January 1850 - August 2016');
+        .attr("y", 0)
+        .text('January 1850 - March 2020');
 
 //Append play button
     var play = textWrapper.append("text")
