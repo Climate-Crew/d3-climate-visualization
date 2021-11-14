@@ -5,7 +5,7 @@
 
 :root {
   --space: 10rem;
-  --primary-color: #FF5A16;
+  --primary-color: #523957;
   --text-dark: #444444;
   --text-grey: #737373;
   --text-light: #CCCCCC;
@@ -127,7 +127,7 @@ body svg {
   }
 
   .card-name{
-    color:#8771FF;
+    color: var(--primary-color);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 22px;
     padding-left: 30%;
@@ -268,12 +268,12 @@ body svg {
 }
 
 #nav.affix a:hover {
-  color: #8771FF;
+  color: var(--primary-color);
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   background: transparent;
-  color: #8771FF !important;
+  color: var(--primary-color) !important;
 }
 
 @media (min-width: 768px) {
@@ -360,7 +360,7 @@ Navigation
 }
 
 .sec-header{
-  color: #8771FF;
+  color: var(--primary-color);
   padding-bottom: 5rem;
 }
 
@@ -418,7 +418,7 @@ body img {
 
 .scuro {
   width: 100%;
-  background-color: #8771FF;
+  background-color: var(--primary-color);
   padding: 5em 0;
 }
 
@@ -461,7 +461,7 @@ body img {
 
 .po-title {
   font-family: "Butler", serif;
-  color: #FF4A60;
+  color: var(--primary-color);
   font-size: 4em;
   line-height: 1.3em;
   text-align: center;
@@ -536,7 +536,7 @@ padding-top:1em;
 }
 
 #graph04 em {
-  background: #ff4a60;
+  background: var(--primary-color);
   color: white;
   font-style: none;
   padding: 0.1em 0.3em 0.1em 0.3em;

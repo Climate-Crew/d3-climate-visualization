@@ -8,7 +8,7 @@ var margin = {
     bottom: 120,
     left: 20
 };
-var width = window.innerWidth - margin.left - margin.right - 20;
+var width = window.innerWidth - margin.left - margin.right - 200;
 var height = window.innerHeight - margin.top - margin.bottom - 20;
 
 var domLow = -1.5,  //-15, low end of data
