@@ -4,7 +4,7 @@
 }
 
 :root {
-  --space: 20rem;
+  --space: 10rem;
   --primary-color: #FF5A16;
   --text-dark: #444444;
   --text-grey: #737373;
@@ -104,7 +104,7 @@ body svg {
 
   .bio-card {
     --offset: var(--space);
-    width: 50%;
+    width: 100%;
     height: 25vh;
     padding: 15px;
     /* background-color: #ffff; */
@@ -121,8 +121,8 @@ body svg {
   }
 
   .card-image{
-    width: 100px;
-    height: 100px;
+    width: 10%;
+    height: 10%;
     float:left;
   }
 
@@ -130,14 +130,14 @@ body svg {
     color:#8771FF;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 22px;
-    padding-left: 27%;
+    padding-left: 30%;
     
   }
 
   .card-text{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 14px;
-    padding-left: 27%;
+    padding-left: 30%;
   }
 
 
@@ -147,7 +147,9 @@ body svg {
 
 .social{
   float:right;
-  padding-top: 8%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .fa {
@@ -913,5 +915,24 @@ body.loading .modal {
   .project-link{
     color: var(--primary-color);
   }
+
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: 2fr;
+}
+
+.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#proj-gallery {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+}
 
 
