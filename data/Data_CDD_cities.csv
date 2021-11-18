@@ -1,0 +1,34 @@
+Global Ranking,City,Country,Baseline Weather File,2020 CDD,2050 CDD,2080 CDD,Model Available (Y/N)
+1,Seoul,South Korea,132,132,325,552,N
+2,Guangzhou,China,837,993,1195,1505,N
+3,New York,USA,203,229,454,714,Y
+4,Hong Kong SAR,China,786,935,1118,1395,N
+5,Los Angeles,USA,636,891,1152,1588,Y
+6,Shanghai,China,432,531,688,938,N
+7,Country of Singapore,Singapore,no data,,,,
+8,Chicago,USA,174,288,438,740,Y
+9,Tokyo,Japan,154,237,337,535,N
+10,Riyadh,Saudi Arabia,1976,2347,2713,3251,N
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Metrics to Track,,,,,,,
