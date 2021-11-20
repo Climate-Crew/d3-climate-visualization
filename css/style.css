@@ -364,6 +364,11 @@ Navigation
   padding-bottom: 5rem;
 }
 
+.sub-sec-header{
+  color: var(--primary-color);
+  padding-bottom: 1rem;
+}
+
 .sec-header-white{
   color: white;
   padding-bottom: 2rem;
@@ -935,6 +940,7 @@ body.loading .modal {
   grid-gap: 2em;
 }
 
+
 /*Global temp vis legend*/
 
 .filled {
@@ -945,6 +951,13 @@ body.loading .modal {
   font-family: sans-serif;
   font-size: 10px;
   text-anchor: middle;
+}
+
+
+div a.links{
+  display: inline-block;
+  height: 50px;
+  color: blue;
 }
 
 
