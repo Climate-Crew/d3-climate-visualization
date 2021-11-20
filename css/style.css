@@ -974,6 +974,8 @@ body.loading .modal {
   font-family: sans-serif;
 }
 
+.button1 {background-color: #cccccc;} /* Grey */
+
 
 div a.links{
   display: inline-block;
