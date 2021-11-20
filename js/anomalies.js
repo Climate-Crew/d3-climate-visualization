@@ -16,7 +16,6 @@ var domLow = -1.5,  //-15, low end of data
     axisTicks = [-1, 0, 1],   //[-20,-10,0,10,20,30];  [-2,-1,0,1,2,3];  [-1.5,-0.5,0.5,1.5];
     duration = 25000; //100000, 50000
 
-
 //SVG container
 var svg = d3.select("#weatherRadial")
     .append("svg")

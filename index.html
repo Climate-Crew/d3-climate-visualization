@@ -9,13 +9,9 @@
     <meta content="Climate change is approaching an irreversible state. The international community is acting to let countries all around the world adapt to the imminent climate challenge."
           property="og:description"/>
     <meta content="meta-tags/og-image.jpg" property="og:image">
-
-
     <meta content="width=device-width, initial-scale=1" name=viewport>
 
-    <script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-
-    <link href="assets/favicon-01.png" rel="icon" type="img/png"/>
+    <link rel="shortcut icon" href="img/earth.png" />
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700|Poppins" rel="stylesheet">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
@@ -279,29 +275,35 @@
 </section>
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-10 offset-1"
-             style="margin-top: 5vh; border: thin solid grey; border-radius: 5px; background: rgba(221,221,221,0.45)">
+<section class="white-bg" id="part2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                <h2 class="sec-header">Global Emissions by Country</h2>
 
-            <!-- header -->
-            <div class="row justify-content-center" style="height: 15vh">
-                <div class="align-self-center" style="">
-                    <h1>Global Emissions by Country</h1>
-                    
+                <div> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+
+
                 </div>
-            </div>
 
-            <!-- graph -->
-            <div class="row justify-content-center" style="height: 60vh">
-                <div class="align-self-center" id="global-emissions-stacked-area-chart"
-                     style="height: 100%; width: 100%"></div>
-            </div>
-
-            <!-- brush -->
-            <div class="row justify-content-center" style="height: 15vh">
-                <div class="align-self-center" id="global-emissions-timeline" style="height: 100%; width: 100%"></div>
-            </div>
+                <!-- graph -->
+                <div class="row justify-content-center" style="height: 80vh">
+                    <div id="global-emissions-stacked-area-chart" style="height: 100%; width: 100%"></div>
+                </div>
 
         </div>
     </div>
@@ -463,17 +465,17 @@
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
-    }</script>
+    }
+</script>
 
+<!-- Import d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
 
 <!--Anomalies Visualization-->
 <script src="./js/anomalies.js"></script>
 
 <!-- Stacked Area chart Visualization objects -->
-<script src="./js/emissions/stackedAreaChart.js"></script>
-<script src="./js/emissions/timeline.js"></script>
-
-<!-- Load data, create visualizations -->
+<script src="./js/emissions/emissions.js"></script>
 <script src="./js/emissions/main.js"></script>
 
 

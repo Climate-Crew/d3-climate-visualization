@@ -2,20 +2,15 @@
 // Variables for the visualization instances
 let areachart, timeline;
 
-// Date parser
-let formatDate = d3.timeFormat("%Y");
-//let parseDate = d3.timeParse("%Y");
-
 // (1) Load data with promises
 
 let promises = [
-	d3.csv("./data/annual-emissions-by-country.csv")
-	// d3.csv("data/annual-emissions-by-region.csv"),
-	// d3.csv("data/annual-emissions-by-world.csv")
+	d3.csv("../data/annual-emissions-by-country.csv")
 ];
 
 Promise.all(promises)
 	.then(function (data) {
+		console.log('This is the data',data)
 		createVis(data)
 	})
 	.catch(function (err) {
@@ -24,29 +19,31 @@ Promise.all(promises)
 
 function createVis(data) {
 
-		console.log(data)
+	var parseDate = d3.timeParse("%Y");
 
-		data[0].forEach((row) => {
+	console.log(data)
 
-			for (let k in row) {
-				if (k != "Year")
-					row[k] = +row[k]
-				if (k == "Year")
-					row[k] = parseDate(row.Year)
-			}
-		});
-        
-        console.log('data loaded')
+	data[0].forEach((row) => {
 
-		// Create an object instance of StackedAreaChart
-		areachart = new StackedAreaChart("global-emissions-stacked-area-chart", data);
+		for (let k in row) {
+			if (k != "Year")
+				row[k] = +row[k]
+			if (k == "Year")
+				row[k] = parseDate(row.Year)
+		}
+	});
 
-		// Create an object instance of Timeline
-		//timeline = new Timeline("global-emissions-timeline", data);
+	console.log('data loaded')
 
-		// Initialize visualization
-		areachart.initVis()
-		//timeline.initVis()
+	// Create an object instance of StackedAreaChart
+	areachart = new StackedAreaChart("global-emissions-stacked-area-chart", data);
+
+	// Create an object instance of Timeline
+	//timeline = new Timeline("global-emissions-timeline", data);
+
+	// Initialize visualization
+	areachart.initVis()
+	//timeline.initVis()
 
 }
 
