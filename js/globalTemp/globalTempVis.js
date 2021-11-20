@@ -5,7 +5,7 @@ var months = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sept'
 
 //upon ajax request being done, run code to set up graph
 function runningData() {
-    var toolTips = d3.selectAll('div.heat-map-data') //on hover, show this tooltip in graph
+    var toolTips = d3_7.selectAll('div.heat-map-data') //on hover, show this tooltip in graph
         .data(mydata.monthlyVariance)
         .enter().append('div')
         .attr('class', 'heat-map-data')
@@ -20,26 +20,26 @@ function runningData() {
     var yPadding = 50;
     var xPadding = 50;
 
-    var xScale = d3.scaleTime() //based off years, greater to the right
-        .domain([new Date(d3.min(yearsArray), 0), new Date(d3.max(yearsArray), 0)])
+    var xScale = d3_7.scaleTime() //based off years, greater to the right
+        .domain([new Date(d3_7.min(yearsArray), 0), new Date(d3_7.max(yearsArray), 0)])
         .range([xPadding + 30, w - (xPadding + 15)]);
 
-    var colorScale = d3.scaleLinear() //color scale
-        .domain([d3.min(tempArray), d3.max(tempArray)])
+    var colorScale = d3_7.scaleLinear() //color scale
+        .domain([d3_7.min(tempArray), d3_7.max(tempArray)])
         .range(['white', 'orangered']);
 
-    var yScale = d3.scaleLinear() //based off months
+    var yScale = d3_7.scaleLinear() //based off months
         .domain([1, 12])
         .range([yPadding, h - (yPadding * 2)]);
 
-    var mapSvg = d3.select('#globalTemp').append('svg') //base svg for heat map to go to
+    var mapSvg = d3_7.select('#globalTemp').append('svg') //base svg for heat map to go to
         .attr('id', 'globalTemp-svg')
         .attr('height', h)
         .attr('width', w + 100)
         .attr('x', -50);
 
-    var xAxis = d3.axisBottom(xScale)
-        .ticks(d3.timeYear.every(20));
+    var xAxis = d3_7.axisBottom(xScale)
+        .ticks(d3_7.timeYear.every(20));
 
     // top reference with regards to what colors mean what
     var legend = mapSvg.append('g')
@@ -83,7 +83,7 @@ function runningData() {
         .attr('width', width)
         .attr('height', barHeightG * 1.5);
 
-    // const tickFormat = d3.format("0.1");
+    // const tickFormat = d3_7.format("0.1");
     // const ticksG = new Array(nTicksG)
     //     .fill()
     //     .map(function(e, i) { return i / (nTicksG - 1)});
@@ -132,6 +132,37 @@ function runningData() {
     mapSvg.append('g')
         .attr('transform', 'translate( 5,' + (h - yPadding)+ ')')
         .call(xAxis);
+
+    mapSvg.append("g")
+        .attr("id", "tooltip")
+        .style("display", "none")
+
+
+    mapSvg.select("#tooltip")
+        .append("text")
+        .attr("id", "populationText")
+        .style("fill", "grey")
+        .attr("y", 10)
+        .attr("x", 10)
+
+    mapSvg.select("#tooltip")
+        .append("text")
+        .attr("id", "dateText")
+        .style("fill", "grey")
+        .style("font-size", "10px")
+        .attr("y", 30)
+        .attr("x", 10)
+
+
+    mapSvg.select("#tooltip")
+        .append("line")
+        .style("stroke", "grey")
+        .style("stroke-width", 2)
+        .attr("id", "populationLine")
+        .attr("x1", 0)
+        .attr("y1", 0)
+        .attr("x2", 0)
+        .attr("y2", height)
 
     var button = mapSvg.append('g')
         .attr('class', 'button')
@@ -184,19 +215,38 @@ function runningData() {
             return 'map-rect' + ' ' + i;
         })
         .on('mouseover', function() {
-            var getTooltip = event.target.className.baseVal.replace('map-rect ', '');
-            document.getElementById(getTooltip).style.display = 'inline-block';
-            document.getElementById(getTooltip).style.top = event.pageY + 25 + 'px';
-            if(event.pageX > (window.innerWidth / 2)) {
-                document.getElementById(getTooltip).style.left = event.pageX - 200 + 'px';
-            } else{
-                document.getElementById(getTooltip).style.left = event.pageX - 200 + 'px';
-            };
+            mapSvg.select("#tooltip").style("display", null);
         })
         .on('mouseout', function() {
-            var getTooltip = event.target.className.baseVal.replace('map-rect ', '');
-            document.getElementById(getTooltip).style.display = 'none';
-        });
+            mapSvg.select("#tooltip").style("display", "none");
+        })
+        .on("mousemove", mouseMove);
+
+
+    function mouseMove(event) {
+        var xCoord = d3_7.pointer(event)[0]
+        var yCoord = d3_7.pointer(event)[1]
+
+        // mapSvg.select("#populationText")
+        //     .text((data[index].population).toString());
+
+        // mapSvg.select("#dateText")
+        //     .text(formatTime((data[index].date)).toString());
+
+        mapSvg.select("#populationLine")
+            .attr('x1', xCoord)
+            .attr('x2', xCoord)
+            .attr('y', yCoord)
+
+        mapSvg.select("#populationText")
+            .attr('x', xCoord + 5)
+            .attr('x2', xCoord)
+
+        mapSvg.select("#dateText")
+            .attr('x', xCoord + 5)
+            .attr('x2', xCoord)
+
+    }
 
     function runMapAnimation() { //animation after click of event button
         mapSvg.selectAll('rect.map-rect')

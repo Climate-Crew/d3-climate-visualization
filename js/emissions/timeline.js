@@ -30,26 +30,26 @@ class Timeline {
 		vis.height = document.getElementById(vis._parentElement).getBoundingClientRect().height  - vis.margin.top - vis.margin.bottom;
 
 		// SVG drawing area
-		vis.svg = d3.select("#" + vis._parentElement).append("svg")
+		vis.svg = d3_7.select("#" + vis._parentElement).append("svg")
 			.attr("width", vis.width + vis.margin.left + vis.margin.right)
 			.attr("height", vis.height + vis.margin.top + vis.margin.bottom)
 			.append("g")
 			.attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
 		// Scales and axes
-		vis.x = d3.scaleTime()
+		vis.x = d3_7.scaleTime()
 			.range([0, vis.width])
-			.domain(d3.extent(vis._displayData, function(d) { return d.Year; }));
+			.domain(d3_7.extent(vis._displayData, function(d) { return d.Year; }));
 
-		vis.y = d3.scaleLinear()
+		vis.y = d3_7.scaleLinear()
 			.range([vis.height, 0])
-			.domain([0, d3.max(vis._displayData, function(d) { return d.Expenditures; })]);
+			.domain([0, d3_7.max(vis._displayData, function(d) { return d.Expenditures; })]);
 
-		vis.xAxis = d3.axisBottom()
+		vis.xAxis = d3_7.axisBottom()
 			.scale(vis.x);
 
 		// SVG area path generator
-		vis.area = d3.area()
+		vis.area = d3_7.area()
 			.x(function(d) { return vis.x(d.Year); })
 			.y0(vis.height)
 			.y1(function(d) { return vis.y(d.Expenditures); });
@@ -61,7 +61,7 @@ class Timeline {
 			.attr("d", vis.area);
 
 		// Initialize brush component
-		let brush = d3.brushX()
+		let brush = d3_7.brushX()
 			.extent([[0, 0], [vis.width, vis.height]])
 			.on("brush", brushed);
 
@@ -87,8 +87,8 @@ function renderBarChart (data){
 	// logging data
 	console.log('rendering barChart', data)
 
-	// former versions of d3 used 'nesting' which has been superseded by 'grouping', see https://github.com/d3/d3-collection#nests
-	let groupedData = Array.from(d3.group(data, d => d.date), ([key, array]) => ({key: key, value: array.length}));
+	// former versions of d3_7 used 'nesting' which has been superseded by 'grouping', see https://github.com/d3_7/d3_7-collection#nests
+	let groupedData = Array.from(d3_7.group(data, d => d.date), ([key, array]) => ({key: key, value: array.length}));
 
 	groupedData.forEach(d => {
 		d.key = parseDate(d.key);
@@ -97,7 +97,7 @@ function renderBarChart (data){
 
 	// Update scale domains
 	x.domain(groupedData.map(d => d.key));
-	y.domain([0, d3.max(groupedData, d => d.value)]);
+	y.domain([0, d3_7.max(groupedData, d => d.value)]);
 
 	// ---- DRAW BARS ----
 	let bars = svg.selectAll(".bar")
@@ -116,23 +116,23 @@ function renderBarChart (data){
 		.on("mouseover", function(event, d) {
 			// no arrow function used here to have access to 'this'
 			//Get this bar's x/y values, then augment for the tooltip
-			let xPosition = margin.left + parseFloat(d3.select(this).attr("x")) + x.bandwidth() / 2;
-			let yPosition = margin.top + parseFloat(d3.select(this).attr("y")) / 2 + height/3;
+			let xPosition = margin.left + parseFloat(d3_7.select(this).attr("x")) + x.bandwidth() / 2;
+			let yPosition = margin.top + parseFloat(d3_7.select(this).attr("y")) / 2 + height/3;
 
 
 			//Update the tooltip position and value
-			d3.select("#tooltip")
+			d3_7.select("#tooltip")
 				.style("left", xPosition + 'px')
 				.style("top", yPosition + 'px')
 				.select("#value")
 				.text(d.value);
 
 			//Show the tooltip
-			d3.select("#tooltip").classed("hidden", false);
+			d3_7.select("#tooltip").classed("hidden", false);
 		})
 		.on("mouseout", function(d) {
 			//Hide the tooltip
-			d3.select("#tooltip").classed("hidden", true);
+			d3_7.select("#tooltip").classed("hidden", true);
 		});
 
 

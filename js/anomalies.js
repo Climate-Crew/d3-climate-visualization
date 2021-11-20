@@ -17,7 +17,7 @@ var domLow = -1.5,  //-15, low end of data
     duration = 25000; //100000, 50000
 
 //SVG container
-var svg = d3.select("#weatherRadial")
+var svg = d3_3.select("#weatherRadial")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -25,7 +25,7 @@ var svg = d3.select("#weatherRadial")
     .attr("transform", "translate(" + (margin.left + width/2) + "," + (margin.top + height/2) + ")");
 
 //Parses a string into a date
-var parseDate = d3.time.format("%Y-%m-%d").parse;
+var parseDate = d3_3.time.format("%Y-%m-%d").parse;
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -34,17 +34,17 @@ var parseDate = d3.time.format("%Y-%m-%d").parse;
 
 
 //Loads data, everything below is within callback:
-d3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
+d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 
     var years = [];
 
-    var climateData = d3.csv.parseRows(text, function(d) {
+    var climateData = d3_3.csv.parseRows(text, function(d) {
         var temp = d[0].split('   ').slice(0,2);
         //console.log(temp[0].split('/'))
         years.push(temp[0].split('/')[0]);
         return {date: parseDate(temp[0].replace('/', '-') + '-1'), mean_temp: +temp[1]}  //'-') + '-01'
     });
-//var data = d3.csv.parseRows(text);
+//var data = d3_3.csv.parseRows(text);
 console.log(climateData);
 
 
@@ -53,28 +53,28 @@ console.log(climateData);
         innerRadius = outerRadius * 0.1;  //Sets the ratio.  Smaller magnifies differences. 0.1 good, 0.15
 
 //Base the color scale on average temperature extremes
-    var colorScale = d3.scale.linear()
+    var colorScale = d3_3.scale.linear()
         .domain([domLow, (domLow+domHigh)/2, domHigh])
         .range(["#2c7bb6", "#ffff8c", "#d7191c"])
-        .interpolate(d3.interpolateHcl);
+        .interpolate(d3_3.interpolateHcl);
 
 //Scale for the heights of the bar, not starting at zero to give the bars an initial offset outward
-    var distScale = d3.scale.linear()
+    var distScale = d3_3.scale.linear()
         .range([innerRadius, outerRadius])
         .domain([domLow, domHigh]);
 
 //Scale to turn the date into an angle of 360 degrees in total
 //With the first datapoint (Jan 1st) on top
-// var angle = d3.scale.linear()
+// var angle = d3_3.scale.linear()
 //     .range([-180, 180])
-//     .domain(d3.extent(climateData, function(d) { return d.date; }));
+//     .domain(d3_3.extent(climateData, function(d) { return d.date; }));
 
 //Function to convert date into radians for path function
 //The radial scale in this case starts with 0 at 90 degrees
-//http://stackoverflow.com/questions/14404345/polar-plots-using-d3-js
-    var radian = d3.scale.linear()
+//http://stackoverflow.com/questions/14404345/polar-plots-using-d3_3-js
+    var radian = d3_3.scale.linear()
         .range([0, Math.PI*2*(climateData.length/12) ])
-        .domain(d3.extent(climateData, function(d) { return d.date; }));
+        .domain(d3_3.extent(climateData, function(d) { return d.date; }));
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -159,7 +159,7 @@ console.log(climateData);
 
 
 //Extra scale since the color scale is interpolated
-// var radScale = d3.scale.linear()
+// var radScale = d3_3.scale.linear()
 //     .domain([domLow, domHigh])
 //     .range([innerRadius, outerRadius]);
 
@@ -177,7 +177,7 @@ console.log(climateData);
         .append("radialGradient")
         .attr("id", "radial-gradient")
         .selectAll("stop")
-        .data(d3.range(numStops))
+        .data(d3_3.range(numStops))
         .enter().append("stop")
         .attr("offset", function(d,i) { return distScale(tempPoint[i])/ outerRadius; })
         .attr("stop-color", function(d,i) { return colorScale( tempPoint[i] ); });
@@ -190,17 +190,17 @@ console.log(climateData);
 
 
 //Radial line, takes radians as argument
-//http://stackoverflow.com/questions/18487780/how-to-make-a-radial-line-segment-using-d3-js
-//http://stackoverflow.com/questions/14404345/polar-plots-using-d3-js
-    var line = d3.svg.line.radial()
+//http://stackoverflow.com/questions/18487780/how-to-make-a-radial-line-segment-using-d3_3-js
+//http://stackoverflow.com/questions/14404345/polar-plots-using-d3_3-js
+    var line = d3_3.svg.line.radial()
         .angle(function(d) { return radian(d.date); })
         .radius(function(d) { return distScale(d.mean_temp); });
 
 //Append path drawing function to play button
     play.on("click", function(){
 
-        if (d3.select("path.line")) {
-            d3.select("path.line").remove();
+        if (d3_3.select("path.line")) {
+            d3_3.select("path.line").remove();
         }
 
         //Create path using line function
@@ -219,7 +219,7 @@ console.log(climateData);
             //Works, but kind of a hack:
             .tween("customTween", function() {
                 return function(t) {
-                    d3.select("text.yearText").text(years[Math.floor(t*years.length-1)])
+                    d3_3.select("text.yearText").text(years[Math.floor(t*years.length-1)])
                         .transition()
                         .duration(t/1.5);
                 };
@@ -235,7 +235,7 @@ console.log(climateData);
 ///////////////////////////////////////////////////////////////////////////
 
 //Extra scale since the color scale is interpolated
-    var tempScale = d3.scale.linear()
+    var tempScale = d3_3.scale.linear()
         .domain([domLow, domHigh])
         .range([0, width]);
 
@@ -255,7 +255,7 @@ console.log(climateData);
         .attr("x1", "0%").attr("y1", "0%")
         .attr("x2", "100%").attr("y2", "0%")
         .selectAll("stop")
-        .data(d3.range(numStops))
+        .data(d3_3.range(numStops))
         .enter().append("stop")
         .attr("offset", function(d,i) { return tempScale( tempPoint[i] )/width; })
         .attr("stop-color", function(d,i) { return colorScale( tempPoint[i] ); });
@@ -290,12 +290,12 @@ console.log(climateData);
         .text("Temperature Anomaly");
 
 //Set scale for x-axis
-    var xScale = d3.scale.linear()
+    var xScale = d3_3.scale.linear()
         .range([-legendWidth/2, legendWidth/2])
         .domain([domLow, domHigh] );
 
 //Define x-axis
-    var xAxis = d3.svg.axis()
+    var xAxis = d3_3.svg.axis()
         .orient("bottom")
         .ticks(5)
         .tickFormat(function(d) { return d + "°C"; })

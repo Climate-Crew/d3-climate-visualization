@@ -342,6 +342,7 @@
                 <div class="row justify-content-center" style="height: 80vh">
                     <div id='globalTemp'></div>
                     <div id='globalTempLegend'></div>
+                    <div id='globalTempTooltip'></div>
                 </div>
 
             </div>
@@ -476,13 +477,9 @@
 </section>
 
 
-<footer class="white-bg" style="padding-top: 20%">
 
 
-</footer>
 
-
-<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
@@ -518,6 +515,17 @@
 
 <!-- Import d3 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+    d3_7 = d3
+    window.d3 = null
+</script>
+
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script>
+    d3_3 = d3
+    window.d3 = null
+</script>
+
 
 <!--Anomalies Visualization-->
 <script src="./js/anomalies.js"></script>
