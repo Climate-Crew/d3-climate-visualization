@@ -4,6 +4,10 @@ let areachart, timeline;
 
 // (1) Load data with promises
 
+var loc = window.location.pathname;
+var dir = loc.substring(0, loc.lastIndexOf('/'));
+console.log(dir)
+
 let promises = [
 	d3.csv("/data/annual-emissions-by-country.csv")
 ];
