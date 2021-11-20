@@ -9,7 +9,7 @@ var dir = loc.substring(0, loc.lastIndexOf('/'));
 console.log('Directory tree is', dir)
 
 let promises = [
-	d3.csv("annual-emissions-by-country.csv")
+	d3.csv("/data/annual-emissions-by-country.csv")
 ];
 
 Promise.all(promises)
