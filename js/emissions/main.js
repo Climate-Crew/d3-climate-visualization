@@ -5,7 +5,7 @@ let areachart, timeline;
 // (1) Load data with promises
 
 let promises = [
-	d3.csv("../data/annual-emissions-by-country.csv")
+	d3.csv("./data/annual-emissions-by-country.csv")
 ];
 
 Promise.all(promises)
