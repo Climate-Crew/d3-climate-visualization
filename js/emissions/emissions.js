@@ -5,7 +5,7 @@ class StackedAreaChart {
     constructor(parentElement, data) {
         this.parentElement = parentElement;
         this.data = data;
-        this.displayData = Array.from(d3.group(this.data[0], d => d.Entity))[0][1]
+        this.displayData = Array.from(d3_7.group(this.data[0], d => d.Entity))[0][1]
 
         console.log("Stacked Area Chart Data:", this.displayData)
 
@@ -36,7 +36,7 @@ class StackedAreaChart {
         console.log(vis.height)
 
         // SVG drawing area
-        vis.svg = d3.select("#" + vis.parentElement).append("svg")
+        vis.svg = d3_7.select("#" + vis.parentElement).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
             .append("g")
@@ -46,13 +46,13 @@ class StackedAreaChart {
         vis.keys = vis.data[0].columns.slice(1)
 
         // Add X axis
-        vis.x = d3.scaleTime()
-            .domain(d3.extent(vis.data[0], function(d) { return d.Year; }))
+        vis.x = d3_7.scaleTime()
+            .domain(d3_7.extent(vis.data[0], function(d) { return d.Year; }))
             .range([ 0, vis.width ]);
 
         // vis.svg.append("g")
         // 	.attr("transform", "translate(0," + vis.height*0.6 + ")")
-        // 	.call(d3.axisBottom(vis.x).tickSize(- vis.height*.7).tickValues([1900, 1925, 1975, 2000]))
+        // 	.call(d3_7.axisBottom(vis.x).tickSize(- vis.height*.7).tickValues([1900, 1925, 1975, 2000]))
         // 	.select(".domain").remove()
 
         // Customization
@@ -66,18 +66,18 @@ class StackedAreaChart {
             .text("Time (year)");
 
         // Add Y axis
-        vis.y = d3.scaleLinear()
+        vis.y = d3_7.scaleLinear()
             .domain([0, 1.8E10])
             .range([ vis.height, 0 ]);
 
         // color palette
-        vis.color = d3.scaleOrdinal()
+        vis.color = d3_7.scaleOrdinal()
             .domain(vis.keys)
-            .range(d3.schemeAccent);
+            .range(d3_7.schemeAccent);
 
         //stack the data?
-        vis.stackedData = d3.stack()
-            .offset(d3.stackOffsetSilhouette)
+        vis.stackedData = d3_7.stack()
+            .offset(d3_7.stackOffsetSilhouette)
             .keys(vis.keys)
             (vis.data[0])
 
@@ -92,8 +92,8 @@ class StackedAreaChart {
         // Three function that change the tooltip when user hover / move / leave a cell
         var mouseover = function(d) {
             vis.Tooltip.style("opacity", 1)
-            d3.selectAll(".myArea").style("opacity", .2)
-            d3.select(this)
+            d3_7.selectAll(".myArea").style("opacity", .2)
+            d3_7.select(this)
                 .style("stroke", "black")
                 .style("opacity", 1)
         }
@@ -102,11 +102,11 @@ class StackedAreaChart {
         }
         var mouseleave = function(d) {
             vis.Tooltip.style("opacity", 0)
-            d3.selectAll(".myArea").style("opacity", 1).style("stroke", "none")
+            d3_7.selectAll(".myArea").style("opacity", 1).style("stroke", "none")
         }
 
         // Area generator
-        vis.area = d3.area()
+        vis.area = d3_7.area()
             .x(function(d) { return vis.x(d.data.Year); })
             .y0(function(d) { return vis.y(d[0]); })
             .y1(function(d) { return vis.y(d[1]); })
@@ -124,7 +124,7 @@ class StackedAreaChart {
             .on("mousemove", mousemove)
             .on("mouseleave", mouseleave)
 
-        vis.xAxis = d3.axisBottom()
+        vis.xAxis = d3_7.axisBottom()
             .scale(vis.x);
 
         // Append x-axis

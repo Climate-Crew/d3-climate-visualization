@@ -5,7 +5,7 @@ let areachart, timeline;
 // (1) Load data with promises
 
 let promises = [
-	d3.csv("../data/annual-emissions-by-country.csv")
+	d3_7.csv("../data/annual-emissions-by-country.csv")
 ];
 
 Promise.all(promises)
@@ -19,7 +19,7 @@ Promise.all(promises)
 
 function createVis(data) {
 
-	var parseDate = d3.timeParse("%Y");
+	var parseDate = d3_7.timeParse("%Y");
 
 	console.log(data)
 
@@ -50,7 +50,7 @@ function createVis(data) {
 function brushed() {
 
 	// Get the extent of the current brush
-	let selectionRange = d3.brushSelection(d3.select(".brush").node());
+	let selectionRange = d3_7.brushSelection(d3_7.select(".brush").node());
 
 	// Convert the extent into the corresponding domain values
 	let selectionDomain = selectionRange.map(timeline.x.invert);
