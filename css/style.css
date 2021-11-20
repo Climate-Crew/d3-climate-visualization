@@ -970,10 +970,13 @@ body.loading .modal {
   text-anchor: middle;
 }
 
+.main-text {
+  font-family: sans-serif;
+}
+
 
 div a.links{
   display: inline-block;
-  height: 50px;
   color: blue;
 }
 
