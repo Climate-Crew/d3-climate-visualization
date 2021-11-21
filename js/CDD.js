@@ -12,7 +12,7 @@
 	//height1 = document.getElementById(vis.parentElement).getBoundingClientRect().height1 - vis.margin1.top - vis.margin1.bottom
 
 	// append the svg object to the body of the page
-	const svg1 = d3.select("#CDD")
+	const svg1 = d3_7.select("#CDD")
 	.append("svg")
 	.attr("width", width1 + margin1.left + margin1.right)
 	.attr("height", height1 + margin1.top + margin1.bottom)
@@ -20,14 +20,14 @@
 	.attr("transform", `translate(${margin1.left}, ${margin1.top})`);
 
 	// Initialize the X axis
-	const x = d3.scaleBand()
+	const x = d3_7.scaleBand()
 	.range([ 0, width1+50])
 	.padding(1);
 	const xAxis = svg1.append("g")
 	.attr("transform", `translate(0, ${height1})`)
 
 	// Initialize the Y axis
-	const y = d3.scaleLinear()
+	const y = d3_7.scaleLinear()
 	.range([ height1, 0]);
 	const yAxis = svg1.append("g")
 	.attr("class", "myYaxis")
@@ -37,15 +37,15 @@
 	function update(selectedVar) {
 
 	// Parse the Data
-	d3.csv("data/CDD_cities.csv").then( function(data) {
+	d3_7.csv("data/CDD_cities.csv").then( function(data) {
 
 		// X axis
 		x.domain(data.map(function(d) { return d.City; }))
-		xAxis.transition().duration(1000).call(d3.axisBottom(x))
+		xAxis.transition().duration(1000).call(d3_7.axisBottom(x))
 
 		// Add Y axis
-		y.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
-		yAxis.transition().duration(1000).call(d3.axisLeft(y));
+		y.domain([0, d3_7.max(data, function(d) { return +d[selectedVar] }) ]);
+		yAxis.transition().duration(1000).call(d3_7.axisLeft(y));
 
 		// variable u: map data to existing circle
 		const j = svg1.selectAll(".myLine")
