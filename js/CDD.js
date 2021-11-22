@@ -3,7 +3,7 @@
 // set the dimensions and margins of the graph
 	const margin1 = {top: 30, right: 30, bottom: 70, left: 60},
 	width1 = 860 - margin1.left - margin1.right,
-	height1 = 500 - margin1.top - margin1.bottom;
+	height1 = 620 - margin1.top - margin1.bottom;
 
 	//width = window.innerWidth - margin.left - margin.right - 200;
 	//height = window.innerHeight - margin.top - margin.bottom - 20;
