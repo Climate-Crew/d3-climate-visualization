@@ -3,13 +3,13 @@
 ///////////////////////////////////////////////////////////////////////////
 
 var margin = {
-    top: 70,
+    top: 20,
     right: 20,
-    bottom: 120,
+    bottom: 0,
     left: 20
 };
-var width = window.innerWidth - margin.left - margin.right - 200;
-var height = window.innerHeight - margin.top - margin.bottom - 20;
+var width = window.innerWidth - margin.left - margin.right - 300;
+var height = window.innerHeight - margin.top - margin.bottom + 50;
 
 var domLow = -1.5,  //-15, low end of data
     domHigh = 1.25,  //30, high end of data
@@ -49,7 +49,7 @@ console.log(climateData);
 
 
 //Set the minimum inner radius and max outer radius of the chart
-    var outerRadius = Math.min(width, height, 500)/2,
+    var outerRadius = Math.min(width, height, 700)/2,
         innerRadius = outerRadius * 0.1;  //Sets the ratio.  Smaller magnifies differences. 0.1 good, 0.15
 
 //Base the color scale on average temperature extremes
