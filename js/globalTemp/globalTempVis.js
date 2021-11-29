@@ -1,5 +1,5 @@
 //URL for data to be pulled from, define arrays and variables to be used
-var ajaxUrl = 'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json',
+var jsonData = 'data/GlobalTemp.json',
     mydata, yearsArray = [], yearStringArray = [], tempArray = [];
 var months = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
@@ -26,7 +26,7 @@ function runningData() {
 
     var colorScale = d3_7.scaleLinear() //color scale
         .domain([d3_7.min(tempArray), d3_7.max(tempArray)])
-        .range(['white', 'orangered']);
+        .range(['cyan', 'orangered']);
 
     var yScale = d3_7.scaleLinear() //based off months
         .domain([1, 12])
@@ -59,7 +59,7 @@ function runningData() {
     const nTicksG = 6; // 0, 20, 40, 60, 80, 100;
 
     const colorsG = [
-        {r: 255, g: 255, b: 255},
+        {r: 0, g: 255, b: 255},
         {r: 255, g: 69, b: 0},
     ];
 // Add gradient line
@@ -75,7 +75,7 @@ function runningData() {
     mainGradient.selectAll("stop")
         .data(colorsG)
         .enter().append("stop")
-        .attr("offset", function(d, x) { return `${x*20}%`; })
+        .attr("offset", function(d, x) { return `${x*35}%`; })
         .attr("stop-color", function(d) { return `rgb(${d.r}, ${d.g}, ${d.b})`; });
     svgGradient.append('rect')
         .classed('filled', true)
@@ -278,7 +278,7 @@ function runningData() {
     }
 }
 
-$.getJSON(ajaxUrl, function(data) {
+$.getJSON(jsonData, function(data) {
     mydata = data;
 
     for(var i = 0; i < mydata.monthlyVariance.length; i++) {
