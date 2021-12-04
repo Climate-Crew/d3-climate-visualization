@@ -119,8 +119,7 @@ i:hover {
 }
 
 i:active {
-  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,179,0,1) 100%, rgba(85,72,5,1) 100%, rgba(0,212,255,1) 100%);
-  color: white;
+
 }
 
 
@@ -234,8 +233,7 @@ body svg {
 
 a, a:hover {
   text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+
 }
 
 
@@ -260,7 +258,7 @@ a, a:hover {
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-  background: white;
+
 }
 
 #nav {
@@ -595,91 +593,7 @@ body img {
 
 
 
-/* IMBUTO */
 
-#graph04{
-  width: 100%;
-  text-transform: uppercase;
-  padding-top: 0.2em;
-}
-
-#graph04 .testo{
-text-transform: none;
-padding-top:1em;
-}
-
-#graph04 em {
-  background: var(--primary-color);
-  color: white;
-  font-style: none;
-  padding: 0.1em 0.3em 0.1em 0.3em;
-}
-
-#graph04 hr {
-  margin: 2em 0 2em 0;
-  border-color: rgba(255,255,255,0.4);
-  width: 20%;
-}
-
-.imbuto {
-  margin-bottom: 1.8em;
-}
-
-.next {
-  position: absolute;
-  bottom: 0;
-}
-
-#graph04 .testo {
-  height: 100%;
-}
-
-/*PIECHARTS*/
-
-
-
-#legenda-tortine img{
-  width: 20%;
-  padding-bottom:3em;
-}
-
-/* Definizioni VULNERABILITY READINESS */
-.v-r {
-  text-align: center;
-}
-
-.definition .graphtitle {
-  color: #FF4A60;
-}
-
-#vr-def mark {
-  background: #ff4a60;
-  color: white;
-  padding: 0.1em 0.5em 0.2em 0.5em;
-}
-
-#vr-def i {
-  font-style: italic;
-  color: #ff4a60;
-}
-
-.components {
-  font-family:"Poppins", sans-serif;
-  font-size: 1em;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 2em;
-}
-
-.components em {
-  color: #FF4A60;
-  font-weight: normal;
-  font-style: normal;
-}
-
-.definition .left {
-  border-right: 1px solid #FF4a60;
-}
 
 
 @-webkit-keyframes pulsing {
@@ -789,111 +703,6 @@ body.loading .modal {
     display: block;
 }
 
-/* PIECHARTS */
-#piecharts .btn {
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 0.7em;
-  letter-spacing: 1px;
-  color: #272727;
-  margin-bottom: 2.5em;
-  width: 16%;
-  display: inline-block;
-  padding: 5px;
-  border: none;
-  border-bottom: 3px solid rgba(0,0,0,.2);
-  border-radius: 0;
-  transition: 0.2s ease;
-  overflow: hidden;
-}
-
-
-#piecharts .btn:active {
-  box-shadow: none;
-}
-
-/* FLUSSI */
-#flussi #asap .st3, #flussi #af .st3, #flussi #ldcf .st3, #flussi #ppcr .st3, #flussi #sccf .st3, #flussi .st9 {
-  cursor: pointer;
-}
-
-#flussi .st9 {
-  transition: 0.3s ease;
-}
-
-#flussi .st9:hover {
-  fill: #ff4a60;
-  opacity: 0.4;
-}
-
-#flussi .datasource {
-  margin-top: 2em;
-}
-
-#graph04 .datasource {
-  margin-top: 2em;
-}
-
-/* MATRIX */
-#pulsanti rect {cursor:pointer; transition: 0.2s ease;}
-#pulsanti rect:hover {fill:rgba(0,0,0,.2)}
-#matrix #dida {
-  cursor: pointer;
-}
-#matrix #mondointero {fill: white; stroke: rgba(0,0,0,.2); stroke-width: 0.5;}
-#matrix #paesi > g {transition: 0.2s ease;}
-
-
-/* HEATMAP + FONDI */
-#heatmap #top-ric polygon, #heatmap #top-vuln polygon, #heatmap #top-ric rect, #heatmap #top-vuln rect {
-  cursor: pointer;
-}
-
-#vuln-read .dueColonne {
-  margin-bottom: 2em;
-}
-
-#vuln-read .heatmap-bottoni {
-  text-align: center;
-  margin: 2em auto 2.5em;
-}
-
-.bottoni {
-  text-align: center;
-}
-
-#vuln-read .btn {
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 2px;
-  color: #272727;
-  width: 150px;
-  display: inline-block;
-  padding: 5px;
-  border: none;
-  border-bottom: 3px solid rgba(0,0,0,.2);
-  border-radius: 0;
-  transition: 0.2s ease;
-}
-
-#vuln-read .btn:active {
-  box-shadow: none;
-}
-
-#vr-def .datasource {
-  margin-top: 2em;
-}
-
-#top-ric, #top-vuln {
-  transition: 0.3s ease;
-}
-
-/* adaptation and mitigation comparison */
-#acting #fundcomp {
-  margin-top: -1.5em;
-}
 
 /* BREAKPOINTS */
 @media only screen and (min-device-width: 320px) and (max-device-width: 425px) {

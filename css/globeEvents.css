@@ -102,6 +102,11 @@ var(--text-light)
     text-align: left;
 }
 
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 
 
 * {
