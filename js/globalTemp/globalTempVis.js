@@ -133,36 +133,9 @@ function runningData() {
         .attr('transform', 'translate( 5,' + (h - yPadding)+ ')')
         .call(xAxis);
 
-    mapSvg.append("g")
-        .attr("id", "tooltip")
-        .style("display", "none")
 
 
-    mapSvg.select("#tooltip")
-        .append("text")
-        .attr("id", "populationText")
-        .style("fill", "grey")
-        .attr("y", 10)
-        .attr("x", 10)
 
-    mapSvg.select("#tooltip")
-        .append("text")
-        .attr("id", "dateText")
-        .style("fill", "grey")
-        .style("font-size", "10px")
-        .attr("y", 30)
-        .attr("x", 10)
-
-
-    mapSvg.select("#tooltip")
-        .append("line")
-        .style("stroke", "grey")
-        .style("stroke-width", 2)
-        .attr("id", "populationLine")
-        .attr("x1", 0)
-        .attr("y1", 0)
-        .attr("x2", 0)
-        .attr("y2", height)
 
     var button = mapSvg.append('g')
         .attr('class', 'button')
@@ -203,7 +176,6 @@ function runningData() {
         .text(function(d,i) {return d;});
 
     //code for data related to each map rectangle representing
-    //one month (yaxis) of each year(xaxis) & avg temp(color)
     mapSvg.selectAll('rect.map-rect')
         .data(mydata.monthlyVariance).enter().append('rect')
         .attr('fill', '#f2f2f2')
@@ -221,6 +193,34 @@ function runningData() {
             mapSvg.select("#tooltip").style("display", "none");
         })
         .on("mousemove", mouseMove);
+
+
+
+    mapSvg.select("#tooltip")
+        .append("text")
+        .attr("id", "populationText")
+        .style("fill", "grey")
+        .attr("y", 10)
+        .attr("x", 10)
+
+    mapSvg.select("#tooltip")
+        .append("text")
+        .attr("id", "dateText")
+        .style("fill", "grey")
+        .style("font-size", "10px")
+        .attr("y", 30)
+        .attr("x", 10)
+
+
+    mapSvg.select("#tooltip")
+        .append("line")
+        .style("stroke", "grey")
+        .style("stroke-width", 2)
+        .attr("id", "populationLine")
+        .attr("x1", 0)
+        .attr("y1", 0)
+        .attr("x2", 0)
+        .attr("y2", height)
 
 
     function mouseMove(event) {
