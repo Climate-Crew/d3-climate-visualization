@@ -1,0 +1,127 @@
+:root {
+    --warm-palette-1 : #973d73;
+    --warm-palette-2 : #a64861;
+    --warm-palette-3 : #c3655d;
+    --warm-palette-4 : #ce6d5a;
+    --warm-palette-5 : #d28c5c;
+
+    --bw-palette-1 : #d8d8d8;
+    --bw-palette-2 : #7f7f7f;
+
+    --cool-palette-1 : #134f5c;
+    --cool-palette-2 : #45818e;
+    --cool-palette-3 : #8c9d85;
+    --cool-palette-4 : #92b7bf;
+
+    --warm-palette-1-opaque: #973d73;
+    --warm-palette-5-opaque : #d28c5c;
+
+    --space: 10rem;
+    --primary-color: #523957;
+    --text-dark: #444444;
+    --text-grey: #737373;
+    --text-light: #CCCCCC;
+    --transition-time: all 0.2s ease-in-out;
+    --font-bold: 700;
+var(--text-light)
+}
+
+
+.flex-grid {
+    display: flex;
+}
+.flex-grid .col {
+    flex: 1;
+}
+.flex-grid .row {
+    flex: 1;
+    padding-top: 10px;
+}
+.flex-grid-thirds {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-grid-thirds .col {
+    width: 32%;
+}
+
+
+.eventDateButton {
+    border-radius: 5px;
+    background-color: #2E2E2E;
+    border: 1px solid lightgray;
+    color: lightgray;
+    padding-left: 5px;
+    width: 20%;
+    font-weight: bold;
+    font-size: 12px;
+
+}
+
+.eventDateButton:hover{
+    color: var(--warm-palette-4);
+    border: 1px solid var(--warm-palette-4);
+}
+
+.eventDateButtonFocus{
+    border-radius: 5px;
+    background-color: var(--warm-palette-4);
+    color: white;
+    border: 1px solid var(--warm-palette-4);
+    padding: 5px;
+    width: 20%;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.eventTypeButton{
+    text-align: left;
+    border-radius: 5px;
+    background-color: #2E2E2E;
+    border: 0px solid var(--warm-palette-4);
+    color: lightgray;
+    padding: 10px;
+    width: 52%;
+    font-weight: bold;
+}
+
+
+.eventTypeButton:hover{
+    color: var(--warm-palette-4);
+    padding: 10px;
+}
+
+.eventTypeButtonFocus{
+    border-radius: 5px;
+    background-color: #2E2E2E;
+    border: 1px solid var(--warm-palette-4);
+    color: var(--warm-palette-4);
+    padding: 10px;
+    width: 52%;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+/*.globeBody {*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*    color: lightgray;*/
+/*}*/
+
+.flex-grid {
+    margin: 0 0 20px 0;
+}
+.flexCol {
+    background: #2E2E2E;
+    padding: 20px;
+}
+
+.small-font{
+    font-size: 14px;
+
+}

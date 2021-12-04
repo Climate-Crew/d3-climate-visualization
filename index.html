@@ -21,6 +21,7 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/set2.css" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link href="css/globeEvents.css" rel="stylesheet">
 
     <style>
 
@@ -126,6 +127,8 @@
             fill: #ccc;
         }
 
+
+
     </style>
 
 
@@ -136,18 +139,7 @@
     <div class="dot"></div>
     <div class="dot-a"></div>
 </div>
-<!--&lt;!&ndash; Navbar &ndash;&gt;-->
-<!--<nav class="navbar navbar-expand-lg navbar-light py-5" style=" background-color: var(&#45;&#45;primary-color);">-->
 
-<!--    <div id="navbarResponsive" style="padding-top: 1.2%; ">-->
-<!--        <ul class="navbar-nav ml-auto">-->
-<!--            <li class="nav-item" style="list-style-type: none;position: absolute;-->
-<!--                  right: 0px; padding: 10px;"><a class="nav-link js-scroll-trigger" href="#about" style="color: white">-->
-<!--                About the Devs</a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
 
 <section id="title">
     <div class="container">
@@ -253,6 +245,9 @@
                     <!--					<i>Climate Spiral:</i>-->
                 </div>
 
+
+
+
                 <div> Temperatures are clearly increasing, but what are likely to be the human impacts of this warming? Which countries and cities is this likely to have the greatest impact on?
                 </div>
                 <div id="riskRanking" style="height: 50vh"></div>
@@ -263,6 +258,62 @@
     </div>
 
 </section>
+
+<!--                Threejs Globe-->
+
+
+<div class="flex-grid">
+    <div class="flexCol" id="globe">
+        <canvas width="700" height="500">
+
+        </canvas>
+    </div>
+    <div class="flexCol">The globe shows 252 extreme weather events and trends across the globe for which scientists have carried out attribution studies. The different symbols show the type of extreme weather; for example, a heatwave, flood or drought.
+        <div class="row">Of these events, <div style="color: #ce6d5a; display: inline"> 91% </div>occurred within the past decade.
+        </div>
+        <!--        <div class="row"> Select a date range below and toggle the weather event types to view the number of each event type.-->
+        <!--        </div>-->
+
+        <div class="row" style="padding-top: 30px">
+            <!--            <div style="padding-right: 5px; padding-bottom: 10px"> Time Period</div>-->
+            <button id="AllDates" class="eventDateButtonFocus"> All </button>
+            <div style="padding-right: 10px"></div>
+            <button id="pre2011" class="eventDateButton"> 1989- 2011 </button>
+            <div style="padding-right: 10px"></div>
+            <button id="post2011" class="eventDateButton"> 2011 - 2020 </button>
+        </div>
+        <div style="padding-top: 30px"></div>
+        Event Type
+        <div class="flex-grid">
+            <div class="col">
+                <button id="firesButton" class="row small-font eventTypeButton" style="padding-right: 5px"> 🔥 Wildfire
+                </button>
+                <button id="stormButton" class="row small-font eventTypeButton"> 🌩 Storm
+                </button>
+                <button id="droughtButton" class="row small-font eventTypeButton"> 💧️ Drought
+                </button>
+
+
+            </div>
+            <div class="col">
+                <button id="heatButton" class="row small-font eventTypeButton"> 🌡 Heat
+                </button>
+                <button id="sunButton" class="row small-font eventTypeButton"> ☀️ Sun
+                </button>
+                <button id="allEvents" class="row small-font eventTypeButtonFocus"> 🌍️ All
+                </button>
+            </div>
+        </div>
+
+        Number of events <div id = "numEvents" style="color:#ce6d5a; font-size: 40px">   252 </div>
+
+    </div>
+
+</div>
+
+
+
+
 <section class="white-bg" id="part2">
     <div class="container">
         <div class="row">
@@ -617,6 +668,17 @@
 
 <!--    Global Temp Vis -->
 <script src="./js/globalTemp/globalTempVis.js"></script>
+
+<!--Threejs globe scripts-->
+
+<script src="./js/globeEvents/three.js"></script>
+<script src="./js/globeEvents/main.js"></script>
+
+<script src="./js/globeEvents/GLTFLoader.js"></script>
+
+<script src="./js/globeEvents/orbit-controls.js"></script>
+
+<script type="module" src="./js/globeEvents/globe.js"></script>
 
 
 </body>
