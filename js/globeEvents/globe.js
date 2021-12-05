@@ -203,7 +203,6 @@ var heat_post_mesh;
     if (hasWebGL()) {
         window.fetch("3d_assets/points.json")
             .then(response => {
-                console.log(response)
                 return response.json()
             })
             .then(data => {
