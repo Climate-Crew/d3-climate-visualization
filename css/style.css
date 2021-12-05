@@ -71,6 +71,40 @@ var(--text-light)
   display: block;
 }
 
+.icon-elem img {
+  width: 50%;
+  height: 50%;
+}
+
+/* SECTION STYLE */
+.section-template {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.section-text-row {
+  background-color:  var(--bw-palette-2);
+}
+
+.section-vis-row {
+  background-color:  var(--bw-palette-1);
+}
+
+.section-col{
+  width: 72%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.section-col p {
+  text-align: center;
+  color: white;
+  font-family: Poppins;
+}
+
 /**/
 
 ::selection {
