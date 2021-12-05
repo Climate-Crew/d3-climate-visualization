@@ -84,7 +84,7 @@
 			.attr("x2", function(d) { return x(d.City); })
 			.attr("y1", y(0))
 			.attr("y2", function(d) { return y(d[selectedVar]); })
-			.attr("stroke", "lightgrey")
+			.attr("stroke", "darkgrey")
 			.attr("stroke-width", 3)
 
 
