@@ -71,6 +71,11 @@ var(--text-light)
   display: block;
 }
 
+.icon-elem img {
+  width: 50%;
+  height: 50%;
+}
+
 /* SECTION STYLE */
 .section-template {
   background-color: white;
