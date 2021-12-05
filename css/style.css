@@ -105,6 +105,8 @@ var(--text-light)
   text-align: center;
   color: white;
   font-family: Poppins;
+  font-size: 45px;
+  font-weight: bold;
 }
 
 /**/
