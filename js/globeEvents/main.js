@@ -12,6 +12,62 @@ var sunToggle = false;
 
 var allToggle = true;
 
+
+document.getElementById('reset').addEventListener("click", function myScript() {
+    camera.orbitControls.reset();
+    camera.position.z = -900;
+
+    document.getElementById('AllDates').classList.remove('eventDateButton')
+    document.getElementById('AllDates').classList.add('eventDateButtonFocus')
+
+    //Reset other buttons
+    document.getElementById('pre2011').classList.remove('eventDateButtonFocus')
+    document.getElementById('pre2011').classList.add('eventDateButton')
+
+    document.getElementById('post2011').classList.remove('eventDateButtonFocus')
+    document.getElementById('post2011').classList.add('eventDateButton')
+
+
+    //Update all toggle -> default to All when switching date ranges
+    document.getElementById('firesButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('firesButton').classList.add('eventTypeButton')
+    firesToggle = false
+
+    document.getElementById('stormButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('stormButton').classList.add('eventTypeButton')
+    stormToggle = false;
+
+    document.getElementById('droughtButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('droughtButton').classList.add('eventTypeButton')
+    droughtToggle = false;
+
+    document.getElementById('heatButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('heatButton').classList.add('eventTypeButton')
+    heatToggle = false;
+
+    document.getElementById('sunButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('sunButton').classList.add('eventTypeButton')
+    sunToggle = false;
+
+    document.getElementById('allEvents').classList.remove('eventTypeButton')
+    document.getElementById('allEvents').classList.add('eventTypeButtonFocus')
+
+    allToggle = true;
+    addModel("flames")
+    addModel("sun")
+    addModel("storm")
+    addModel("stormP")
+    addModel("drought")
+    addModel("droughtP")
+    addModel("heat")
+    addModel("heatP")
+
+    numEvents.innerText = "252"
+
+    timePeriod = "All"
+
+})
+
 document.getElementById('AllDates').addEventListener("click", function myScript(){
         document.getElementById('AllDates').classList.remove('eventDateButton')
         document.getElementById('AllDates').classList.add('eventDateButtonFocus')
@@ -382,6 +438,7 @@ document.getElementById('allEvents').addEventListener("click", function myScript
     } else if(allToggle == false){
         document.getElementById('allEvents').classList.remove('eventTypeButtonFocus')
         document.getElementById('allEvents').classList.add('eventTypeButton')
+
 
         removeModel("flames")
         removeModel("sun")

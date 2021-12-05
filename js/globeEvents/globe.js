@@ -12,6 +12,8 @@ var drought_post_mesh;
 var heat_pre_mesh;
 var heat_post_mesh;
 
+var camera;
+
 (function() {
     const container = document.getElementById("globe");
     const canvas = container.getElementsByTagName("canvas")[0];
@@ -23,7 +25,7 @@ var heat_post_mesh;
 
 
         // 2. Setup camera
-        const camera = new THREE.PerspectiveCamera(15, width / height);
+        camera = new THREE.PerspectiveCamera(15, width / height);
         // 3. Setup renderer
         const renderer = new THREE.WebGLRenderer({ canvas });
         renderer.setSize(width, height);
@@ -157,6 +159,8 @@ var heat_post_mesh;
         camera.orbitControls.enablePan = true;
         camera.orbitControls.enableRotate = true;
         camera.orbitControls.autoRotate = true;
+        camera.orbitControls.maxDistance = 1000;
+        
         // Tweak this value based on how far/away you'd like the camera
         // to be from the globe.
         camera.position.z = -900;
