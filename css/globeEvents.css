@@ -37,6 +37,7 @@ textarea:focus, input:focus{
 
 .flex-grid {
     display: flex;
+    color: lightgray;
 }
 .flex-grid .col {
     flex: 1;
