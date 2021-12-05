@@ -1,6 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
-//////////////////// Set up and initiate svg containers ///////////////////
-///////////////////////////////////////////////////////////////////////////
+
 
 var margin = {
     top: 20,
@@ -26,12 +24,6 @@ var svg = d3_3.select("#weatherRadial")
 
 //Parses a string into a date
 var parseDate = d3_3.time.format("%Y-%m-%d").parse;
-
-
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////// Create scales ////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-
 
 //Loads data, everything below is within callback:
 d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
@@ -77,16 +69,13 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
         .domain(d3_3.extent(climateData, function(d) { return d.date; }));
 
 
-///////////////////////////////////////////////////////////////////////////
-//////////////////////////// Create Titles ////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-
     var textWrapper = svg.append("g").attr("class", "textWrapper")
         .attr("transform", "translate(" + Math.max(-width/2, -outerRadius - 170) + "," + 0 + ")");
 
 //Append title to the top
     textWrapper.append("text")
         .attr("class", "spiral-title")
+        .style('fill', 'black')
         .attr("x", 0)
         .attr("y", -outerRadius - 40)
         .text("Global Temperature Anomaly");
@@ -94,6 +83,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Subtitle:
     textWrapper.append("text")
         .attr("class", "spiral-subtitle")
+        .style('fill', 'black')
         .attr("x", 0)
         .attr("y", 0)
         .text('January 1850 - March 2020');
@@ -101,6 +91,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Append play button
     var play = textWrapper.append("text")
         .attr("class", "play")
+        .style('fill', 'black')
         .attr("x", 0)
         .attr("y", -outerRadius + 30)
         .text("\u25B7")  //unicode triangle: U+25B2  \u25b2
@@ -118,11 +109,11 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Draw gridlines below the bars
     var axes = barWrapper.selectAll(".gridCircles")
         .data(axisTicks)
-        .enter().append("g");
+        .enter().append("g").attr("stroke", "black");
 //Draw the circles
     axes.append("circle")
         .attr("class", "axisCircles")
-        .attr("r", function(d) { return distScale(d); });
+        .attr("r", function(d) { return distScale(d); }).style("stroke", "black");
 //Draw the axis labels
     axes.append("text")
         .attr("class", "axisText")
@@ -133,6 +124,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Add January for reference
     barWrapper.append("text")
         .attr("class", "january")
+        .style('fill', 'black')
         .attr("x", 7)
         .attr("y", -outerRadius * 1.1)
         .attr("dy", "0.9em")
@@ -140,6 +132,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Add a line to split the year
     barWrapper.append("line")
         .attr("class", "yearLine")
+        .style("stroke", "black")
         .attr("x1", 0)
         .attr("y1", -innerRadius * 1.8)  //.65
         .attr("x2", 0)
@@ -148,20 +141,11 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Add year in center
     barWrapper.append("text")
         .attr("class", "yearText")
+        .style('fill', 'black')
         .attr("x", -22)
         .attr("y", 0)
         //.attr("dy", "0.9em")
         .text("1850");
-
-///////////////////////////////////////////////////////////////////////////
-//////////////// Create radial gradient for the line //////////////////////
-///////////////////////////////////////////////////////////////////////////
-
-
-//Extra scale since the color scale is interpolated
-// var radScale = d3_3.scale.linear()
-//     .domain([domLow, domHigh])
-//     .range([innerRadius, outerRadius]);
 
 //Calculate the variables for the temp gradient
     var numStops = 10;
@@ -181,13 +165,6 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
         .enter().append("stop")
         .attr("offset", function(d,i) { return distScale(tempPoint[i])/ outerRadius; })
         .attr("stop-color", function(d,i) { return colorScale( tempPoint[i] ); });
-
-
-
-///////////////////////////////////////////////////////////////////////////
-////////////////////////////// Draw lines /////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-
 
 //Radial line, takes radians as argument
 //http://stackoverflow.com/questions/18487780/how-to-make-a-radial-line-segment-using-d3_3-js
@@ -230,10 +207,6 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
     });
 
 
-///////////////////////////////////////////////////////////////////////////
-//////////////// Create the gradient for the legend ///////////////////////
-///////////////////////////////////////////////////////////////////////////
-
 //Extra scale since the color scale is interpolated
     var tempScale = d3_3.scale.linear()
         .domain([domLow, domHigh])
@@ -260,10 +233,6 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
         .attr("offset", function(d,i) { return tempScale( tempPoint[i] )/width; })
         .attr("stop-color", function(d,i) { return colorScale( tempPoint[i] ); });
 
-///////////////////////////////////////////////////////////////////////////
-////////////////////////// Draw the legend ////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-
     var legendWidth = Math.min(outerRadius*2, 400);
 
 //Color Legend container
@@ -284,6 +253,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Append title
     legendsvg.append("text")
         .attr("class", "legendTitle")
+        .style("fill", "black")
         .attr("x", 0)
         .attr("y", -10)
         .style("text-anchor", "middle")
@@ -305,6 +275,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
     legendsvg.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + (10) + ")")
+        .style("fill", "black")
         .call(xAxis);
 
 }); //End data callback
