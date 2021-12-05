@@ -124,6 +124,7 @@ var(--text-light)
   color: white;
   position: absolute;
   font-family: Poppins;
+  text-align: center;
   top: 20 px;
   left: 16px;
 }
