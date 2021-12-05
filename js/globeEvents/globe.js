@@ -1,4 +1,13 @@
+// 1. Setup scene
+const scene = new THREE.Scene();
+var flames_mesh;
+var sun_mesh;
 
+var storms_pre_mesh;
+var storms_post_mesh;
+
+var drought_pre_mesh;
+var drought_post_mesh;
 
 (function() {
     const container = document.getElementById("globe");
@@ -9,8 +18,7 @@
     function init(points) {
         const { width, height } = container.getBoundingClientRect();
 
-        // 1. Setup scene
-        const scene = new THREE.Scene();
+
         // 2. Setup camera
         const camera = new THREE.PerspectiveCamera(15, width / height);
         // 3. Setup renderer
@@ -22,7 +30,7 @@
         // Material that the points will be made of.
         const pointGeometry = new THREE.SphereGeometry(0.5, 1, 1);
         const pointMaterial = new THREE.MeshBasicMaterial({
-            color: "gray"
+            color: "white"
         });
 
         for (let point of points) {
@@ -64,6 +72,54 @@
 
         })
 
+        loader.load('./3d_assets/flames.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+            flames_mesh = gltf.scene;
+            flames_mesh.visible = true;
+
+        })
+
+        loader.load('./3d_assets/sun.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+            sun_mesh = gltf.scene
+            sun_mesh.visible = true;
+
+        })
+        loader.load('./3d_assets/storms_pre.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+            storms_pre_mesh = gltf.scene
+            storms_pre_mesh.visible = true;
+
+        })
+        loader.load('./3d_assets/storms_post.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+            storms_post_mesh = gltf.scene
+            storms_post_mesh.visible = true;
+
+        })
+        loader.load('./3d_assets/drought_pre.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+            drought_pre_mesh = gltf.scene
+            drought_pre_mesh.visible = true;
+
+        })
+        loader.load('./3d_assets/drought_post.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+            drought_post_mesh = gltf.scene
+            drought_post_mesh.visible = true;
+
+        })
+        loader.load('./3d_assets/heat_pre.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+
+        })
+        loader.load('./3d_assets/heat_post.glb', function ( gltf ) {
+            scene.add(gltf.scene);
+
+        })
+
+
+
 
         ;
 
@@ -96,7 +152,7 @@
         camera.orbitControls.autoRotate = true;
         // Tweak this value based on how far/away you'd like the camera
         // to be from the globe.
-        camera.position.z = -1000;
+        camera.position.z = -900;
 
         // 4. Use requestAnimationFrame to recursively draw the scene in the DOM.
         function animate() {
@@ -145,3 +201,51 @@
             });
     }
 })()
+
+
+function addModel(name){
+    if(name == "flames"){
+        flames_mesh.visible = true;
+    }
+    if(name == "sun"){
+        sun_mesh.visible = true;
+    }
+
+    if(name == "storm"){
+        storms_pre_mesh.visible = true;
+    }
+    if(name == "stormP"){
+        storms_post_mesh.visible = true;
+    }
+    if(name == "drought"){
+        drought_pre_mesh.visible = true;
+    }
+    if(name == "droughtP"){
+        drought_post_mesh.visible = true;
+    }
+}
+
+
+function removeModel(name){
+
+    if(name == "flames"){
+        flames_mesh.visible = false;
+    }
+    if(name == "sun"){
+        sun_mesh.visible = false;
+    }
+    if(name == "storm"){
+        storms_pre_mesh.visible = false;
+    }
+    if(name == "stormP"){
+        storms_post_mesh.visible = false;
+    }
+    if(name == "drought"){
+        drought_pre_mesh.visible = false;
+    }
+    if(name == "droughtP"){
+        drought_post_mesh.visible = false;
+    }
+
+}
+

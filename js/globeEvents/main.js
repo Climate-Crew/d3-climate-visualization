@@ -49,6 +49,12 @@ document.getElementById('AllDates').addEventListener("click", function myScript(
     document.getElementById('allEvents').classList.add('eventTypeButtonFocus')
 
     allToggle = true;
+    addModel("flames")
+    addModel("sun")
+    addModel("storm")
+    addModel("stormP")
+    addModel("drought")
+    addModel("droughtP")
 
         numEvents.innerText = "252"
 
@@ -96,6 +102,14 @@ document.getElementById('pre2011').addEventListener("click", function myScript()
         allToggle = true;
         numEvents.innerText = "18"
 
+        removeModel("flames")
+        removeModel("sun")
+
+        addModel("storm")
+        removeModel("stormP")
+
+        addModel("drought")
+        removeModel("droughtP")
 
         timePeriod = "Pre"
 });
@@ -137,6 +151,15 @@ document.getElementById('post2011').addEventListener("click", function myScript(
 
     allToggle = true;
 
+    addModel("flames")
+    addModel("sun")
+
+    addModel("stormP")
+    removeModel("storm")
+
+    addModel("droughtP")
+    removeModel("drought")
+
     numEvents.innerText = "234"
 
     timePeriod = "Post"
@@ -150,19 +173,19 @@ document.getElementById('post2011').addEventListener("click", function myScript(
 
 document.getElementById('firesButton').addEventListener("click", function myScript(){
     firesToggle = !firesToggle;
-    updateButton(document.getElementById('firesButton'), firesToggle, 16, 0 , 16 )
+    updateButton(document.getElementById('firesButton'), firesToggle, 16, 0 , 16, "flames" )
 });
 
 document.getElementById('stormButton').addEventListener("click", function myScript(){
     stormToggle = !stormToggle;
-    updateButton(document.getElementById('stormButton'), stormToggle, 33 , 4, 29)
+    updateButton(document.getElementById('stormButton'), stormToggle, 33 , 4, 29, "storm", "stormP")
 
 });
 
 
 document.getElementById('droughtButton').addEventListener("click", function myScript(){
     droughtToggle = !droughtToggle;
-    updateButton(document.getElementById('droughtButton'), droughtToggle, 68 , 5, 63)
+    updateButton(document.getElementById('droughtButton'), droughtToggle, 68 , 5, 63, "drought", "droughtP")
 
 });
 
@@ -174,13 +197,13 @@ document.getElementById('heatButton').addEventListener("click", function myScrip
 
 document.getElementById('sunButton').addEventListener("click", function myScript(){
     sunToggle = !sunToggle;
-    updateButton(document.getElementById('sunButton'), sunToggle, 3 , 0, 3)
+    updateButton(document.getElementById('sunButton'), sunToggle, 3 , 0, 3, "sun" )
 
 });
 
 
 
-function updateButton(button, toggle, value, pre, post){
+function updateButton(button, toggle, value, pre, post, name, post_name){
     if(allToggle){numEventsVal = 0;}
 
     allToggle = false
@@ -190,40 +213,90 @@ function updateButton(button, toggle, value, pre, post){
         numEvents.innerText = "0"
     }
 
+    if(numEventsVal == 0){
+        removeModel("flames")
+        removeModel("sun")
+        removeModel("storm")
+        removeModel("stormP")
+        removeModel("drought")
+        removeModel("droughtP")
+    }
+
     if(toggle){
         button.classList.remove('eventTypeButton')
         button.classList.add('eventTypeButtonFocus')
+
 
         //Display number of events based on time period
         if(timePeriod == "All"){
             numEventsVal += value
             numEvents.innerText = numEventsVal.toString();
+            addModel(name)
+            addModel(post_name)
+
         }
         if(timePeriod == "Pre"){
             numEventsVal += pre
             numEvents.innerText = numEventsVal.toString();
+
+            if(name == "flames" || name == "sun"){
+                removeModel(name)
+            }
+            if(name == "storm" || name == "drought"){
+                addModel(name)
+            }
+            if(post_name == "stormP" || post_name == "droughtP"){
+                removeModel(post_name)
+            }
+
+
         }
         if(timePeriod == "Post"){
             numEventsVal += post
             numEvents.innerText = numEventsVal.toString();
+            if(name == "flames" || name == "sun"){
+                addModel(name)
+            }
+            if(name == "storm" || name == "drought"){
+                removeModel(name)
+            }
+            if(post_name == "stormP" || post_name == "droughtP"){
+                addModel(post_name)
+            }
         }
 
     } else if(toggle == false){
         button.classList.remove('eventTypeButtonFocus')
         button.classList.add('eventTypeButton')
 
+
         //Display number of events based on time period
         if(timePeriod == "All"){
             numEventsVal -= value
             numEvents.innerText = numEventsVal.toString();
+            if(name == "flames" || name == "sun" || name == "storm" || name == "drought"){
+                removeModel(name)
+            }
+            if(post_name == "stormP" || post_name == "droughtP"){
+                removeModel(post_name)
+            }
         }
         if(timePeriod == "Pre"){
             numEventsVal -= pre
             numEvents.innerText = numEventsVal.toString();
+            if(name == "flames" || name == "sun" || name == "storm" || name == "drought"){
+                removeModel(name)
+            }
         }
         if(timePeriod == "Post"){
             numEventsVal -= post
             numEvents.innerText = numEventsVal.toString();
+            if(name == "flames" || name == "sun" || name == "storm" || name == "drought"){
+                removeModel(name)
+            }
+            if(post_name == "stormP" || post_name == "droughtP"){
+                removeModel(post_name)
+            }
         }
     }
 
@@ -266,14 +339,42 @@ document.getElementById('allEvents').addEventListener("click", function myScript
         sunToggle = false;
 
 
-        if(timePeriod == "All"){numEvents.innerText = "252"}
-        if(timePeriod == "Pre"){numEvents.innerText = "18"}
-        if(timePeriod == "Post"){numEvents.innerText = "234"}
+        if(timePeriod == "All"){
+            numEvents.innerText = "252"
+            addModel("flames")
+            addModel("sun")
+            addModel("storm")
+            addModel("stormP")
+            addModel("drought")
+            addModel("droughtP")
+        }
+        if(timePeriod == "Pre"){
+            numEvents.innerText = "18"
+            addModel("storm")
+            addModel("drought")
+        }
+        if(timePeriod == "Post"){
+            numEvents.innerText = "234"
+            addModel("flames")
+            addModel("sun")
+            addModel("stormP")
+            addModel("droughtP")
+        }
+
+
+
 
 
     } else if(allToggle == false){
         document.getElementById('allEvents').classList.remove('eventTypeButtonFocus')
         document.getElementById('allEvents').classList.add('eventTypeButton')
+
+        removeModel("flames")
+        removeModel("sun")
+        removeModel("storm")
+        removeModel("stormP")
+        removeModel("drought")
+        removeModel("droughtP")
 
         numEvents.innerText = "0"
     }
