@@ -105,14 +105,15 @@ var(--text-light)
   text-align: center;
   color: white;
   font-family: Poppins;
-  font-size: 80px;
+  font-size: 30px;
   font-weight: bold;
 }
 
 .section-col h1 {
-  font-size: 40px;
+  font-size: 60px;
   color: white;
   margin-bottom: 20px;
+  margin-top: 20px;
   font-family: Poppins;
   text-align: left;
   padding-top: 10%;
