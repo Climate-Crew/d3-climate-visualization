@@ -119,6 +119,12 @@ var(--text-light)
   padding-top: 10%;
 }
 
+.overtext {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
 /**/
 
 ::selection {
