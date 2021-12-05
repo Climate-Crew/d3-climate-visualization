@@ -109,6 +109,15 @@ var(--text-light)
   font-weight: bold;
 }
 
+.section-col h1 {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 20px;
+  font-family: Poppins;
+  text-align: left;
+  padding-top: 10%;
+}
+
 /**/
 
 ::selection {
