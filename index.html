@@ -316,16 +316,19 @@
 
 <div class="flex-grid">
     <div class="flexCol" id="globe">
-        <button id="reset" class="eventDateButton" style="width: 15%"> Reset Globe</button>
-        <canvas width="700" height="500">
+        <button class="eventDateButton" id="reset" style="width: 15%"> Reset Globe</button>
+        <canvas height="500" width="700">
 
         </canvas>
     </div>
     <div class="flexCol">
-        <div class="row"> The globe shows &nbsp; <span style="color: #ce6d5a; font-weight: bold">252 extreme weather events</span> across the globe for which scientists have carried out attribution studies.
+        <div class="row" style="padding-top: 25px"> The globe shows &nbsp; <span
+                style="color: #ce6d5a; font-weight: bold">252 extreme weather events</span> across the globe for which
+            scientists have carried out attribution studies.
         </div>
 
-        <div class="row">Of these events,&nbsp; <span style="color: #ce6d5a; font-weight: bold">92%</span> &nbsp;were within the past decade.
+        <div class="row">Of these events,&nbsp; <span style="color: #ce6d5a; font-weight: bold">92%</span> &nbsp;were
+            within the past decade.
         </div>
         <!--        <div class="row"> Select a date range below and toggle the weather event types to view the number of each event type.-->
         <!--        </div>-->
@@ -333,46 +336,61 @@
         <div class="row" style="padding-top: 30px">
             <!--            <div style="padding-right: 5px; padding-bottom: 10px"> Time Period</div>-->
             <div style="padding-left: 10px"></div>
-            <button id="AllDates" class="eventDateButtonFocus"> All </button>
+            <button class="eventDateButtonFocus" id="AllDates"> All</button>
             <div style="padding-right: 10px"></div>
-            <button id="pre2011" class="eventDateButton"> 1989- 2011 </button>
+            <button class="eventDateButton" id="pre2011"> 1950 - 2011</button>
             <div style="padding-right: 10px"></div>
-            <button id="post2011" class="eventDateButton"> 2011 - 2020 </button>
+            <button class="eventDateButton" id="post2011"> 2011 - 2020</button>
         </div>
         <div style="padding-top: 30px"></div>
-        Event Type
+        <div style="font-weight: bolder">Event Type</div>
         <div class="flex-grid">
             <div class="col">
                 <div style="padding-bottom: 10px"></div>
-                <button id="firesButton" class="row small-font eventTypeButton" style="padding-right: 5px; "> 🔥 &nbsp;&nbsp;Wildfire
+                <button class="row small-font eventTypeButton" id="firesButton" style="padding-right: 5px; "> 🔥 &nbsp;&nbsp;Wildfire
                 </button>
                 <div style="padding-bottom: 10px"></div>
-                <button id="stormButton" class="row small-font eventTypeButton">🌩 &nbsp;&nbsp;Storm
+                <button class="row small-font eventTypeButton" id="stormButton">🌩 &nbsp;&nbsp;Storm
                 </button>
                 <div style="padding-bottom: 10px"></div>
-                <button id="droughtButton" class="row small-font eventTypeButton"> 💧️ &nbsp;&nbsp;Drought
+                <button class="row small-font eventTypeButton" id="droughtButton"> 💧️ &nbsp;&nbsp;Drought
                 </button>
 
 
             </div>
             <div class="col">
                 <div style="padding-bottom: 10px"></div>
-                <button id="heatButton" class="row small-font eventTypeButton"> 🌡 &nbsp; &nbsp;Heat
+                <button class="row small-font eventTypeButton" id="heatButton"> 🌡 &nbsp; &nbsp;Heat
                 </button>
                 <div style="padding-bottom: 10px"></div>
-                <button id="sunButton" class="row small-font eventTypeButton"> ☀️ &nbsp;&nbsp;Sun
+                <button class="row small-font eventTypeButton" id="sunButton"> ☀️ &nbsp;&nbsp;Sun
                 </button>
                 <div style="padding-bottom: 10px"></div>
-                <button id="allEvents" class="row small-font eventTypeButtonFocus"> 🌍️ &nbsp;&nbsp;All
+                <button class="row small-font eventTypeButtonFocus" id="allEvents"> 🌍️ &nbsp;&nbsp;All
                 </button>
             </div>
         </div>
 
-        Number of events <div id = "numEvents" style="color:#ce6d5a; font-size: 40px; font-weight: bolder">   252 </div>
+        <div class="flex-grid">
+            <div class="row">
 
+                <div class="col">
+                    <div style="font-weight: bolder">Number of Events</div>
+
+                    <div id="numEvents" style="color:#ce6d5a; font-size: 40px; font-weight: bolder"> 252</div>
+                </div>
+
+                <div class="col">
+                    <div style="font-weight: bolder" id="eventHeader">Weather Events</div>
+                    <div style="font-size: 15px; padding-right: 10px" id ="eventCaption"> The different symbols show the type of extreme weather event.</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </div>
+
 
 
 

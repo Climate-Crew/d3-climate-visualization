@@ -65,7 +65,7 @@ var camera;
         let clock = new THREE.Clock();
 
         loader.load('./3d_assets/sphere.glb', function ( gltf ) {
-             mixer = new THREE.AnimationMixer(gltf.scene);
+            mixer = new THREE.AnimationMixer(gltf.scene);
 
             gltf.animations.forEach((clip) => {
                 mixer.clipAction(clip).play()
@@ -134,33 +134,34 @@ var camera;
 
 
 
-       //
-       //  const { a, b, c } = convertFlatCoordsToSphereCoords(
-       //      100,
-       //      100,
-       //
-       //  );
-       //
-       //  const geometry = new THREE.Geometry();
-       //  // Material that the points will be made of.
-       //  const newGeometry = new THREE.SphereGeometry(1, 1, 1);
-       //  const material = new THREE.MeshBasicMaterial({color: "#FF0000" } );
-       //
-       //  newGeometry.translate(a, b, c);
-       //  geometry.merge(pointGeometry);
-       //  newGeometry.translate(-a, -b, -c);
-       //
-       // // const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
-       //  const DOT = new THREE.Mesh(geometry, material);
-       //  scene.add(DOT);
+        //
+        //  const { a, b, c } = convertFlatCoordsToSphereCoords(
+        //      100,
+        //      100,
+        //
+        //  );
+        //
+        //  const geometry = new THREE.Geometry();
+        //  // Material that the points will be made of.
+        //  const newGeometry = new THREE.SphereGeometry(1, 1, 1);
+        //  const material = new THREE.MeshBasicMaterial({color: "#FF0000" } );
+        //
+        //  newGeometry.translate(a, b, c);
+        //  geometry.merge(pointGeometry);
+        //  newGeometry.translate(-a, -b, -c);
+        //
+        // // const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+        //  const DOT = new THREE.Mesh(geometry, material);
+        //  scene.add(DOT);
 
 
         camera.orbitControls = new THREE.OrbitControls(camera, canvas);
         camera.orbitControls.enablePan = true;
         camera.orbitControls.enableRotate = true;
         camera.orbitControls.autoRotate = true;
-        camera.orbitControls.maxDistance = 1000;
-        
+        camera.orbitControls.maxDistance = 1800;
+        camera.orbitControls.minDistance = 400;
+
         // Tweak this value based on how far/away you'd like the camera
         // to be from the globe.
         camera.position.z = -900;

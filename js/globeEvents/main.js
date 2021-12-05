@@ -66,18 +66,21 @@ document.getElementById('reset').addEventListener("click", function myScript() {
 
     timePeriod = "All"
 
+    document.getElementById('eventHeader').innerText = "Weather Events"
+    document.getElementById('eventCaption').innerText = "The different symbols show the type of extreme weather event."
+
 })
 
 document.getElementById('AllDates').addEventListener("click", function myScript(){
-        document.getElementById('AllDates').classList.remove('eventDateButton')
-        document.getElementById('AllDates').classList.add('eventDateButtonFocus')
+    document.getElementById('AllDates').classList.remove('eventDateButton')
+    document.getElementById('AllDates').classList.add('eventDateButtonFocus')
 
-        //Reset other buttons
-        document.getElementById('pre2011').classList.remove('eventDateButtonFocus')
-        document.getElementById('pre2011').classList.add('eventDateButton')
+    //Reset other buttons
+    document.getElementById('pre2011').classList.remove('eventDateButtonFocus')
+    document.getElementById('pre2011').classList.add('eventDateButton')
 
-        document.getElementById('post2011').classList.remove('eventDateButtonFocus')
-        document.getElementById('post2011').classList.add('eventDateButton')
+    document.getElementById('post2011').classList.remove('eventDateButtonFocus')
+    document.getElementById('post2011').classList.add('eventDateButton')
 
 
     //Update all toggle -> default to All when switching date ranges
@@ -114,37 +117,40 @@ document.getElementById('AllDates').addEventListener("click", function myScript(
     addModel("heat")
     addModel("heatP")
 
-        numEvents.innerText = "252"
+    numEvents.innerText = "252"
 
-        timePeriod = "All"
+    timePeriod = "All"
+
+    document.getElementById('eventHeader').innerText = "Weather Events"
+    document.getElementById('eventCaption').innerText = "The different symbols show the type of extreme weather event."
 
 
 });
 
 document.getElementById('pre2011').addEventListener("click", function myScript(){
-        document.getElementById('pre2011').classList.remove('eventDateButton')
-        document.getElementById('pre2011').classList.add('eventDateButtonFocus')
+    document.getElementById('pre2011').classList.remove('eventDateButton')
+    document.getElementById('pre2011').classList.add('eventDateButtonFocus')
 
-        //Reset other buttons
-        document.getElementById('AllDates').classList.remove('eventDateButtonFocus')
-        document.getElementById('AllDates').classList.add('eventDateButton')
+    //Reset other buttons
+    document.getElementById('AllDates').classList.remove('eventDateButtonFocus')
+    document.getElementById('AllDates').classList.add('eventDateButton')
 
-        document.getElementById('post2011').classList.remove('eventDateButtonFocus')
-        document.getElementById('post2011').classList.add('eventDateButton')
+    document.getElementById('post2011').classList.remove('eventDateButtonFocus')
+    document.getElementById('post2011').classList.add('eventDateButton')
 
 
-        //Update all toggle -> default to All when switching date ranges
-        document.getElementById('firesButton').classList.remove('eventTypeButtonFocus')
-        document.getElementById('firesButton').classList.add('eventTypeButton')
-        firesToggle = false
+    //Update all toggle -> default to All when switching date ranges
+    document.getElementById('firesButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('firesButton').classList.add('eventTypeButton')
+    firesToggle = false
 
-        document.getElementById('stormButton').classList.remove('eventTypeButtonFocus')
-        document.getElementById('stormButton').classList.add('eventTypeButton')
-        stormToggle = false;
+    document.getElementById('stormButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('stormButton').classList.add('eventTypeButton')
+    stormToggle = false;
 
-        document.getElementById('droughtButton').classList.remove('eventTypeButtonFocus')
-        document.getElementById('droughtButton').classList.add('eventTypeButton')
-        droughtToggle = false;
+    document.getElementById('droughtButton').classList.remove('eventTypeButtonFocus')
+    document.getElementById('droughtButton').classList.add('eventTypeButton')
+    droughtToggle = false;
 
     document.getElementById('heatButton').classList.remove('eventTypeButtonFocus')
     document.getElementById('heatButton').classList.add('eventTypeButton')
@@ -154,25 +160,28 @@ document.getElementById('pre2011').addEventListener("click", function myScript()
     document.getElementById('sunButton').classList.add('eventTypeButton')
     sunToggle = false;
 
-        document.getElementById('allEvents').classList.remove('eventTypeButton')
-        document.getElementById('allEvents').classList.add('eventTypeButtonFocus')
+    document.getElementById('allEvents').classList.remove('eventTypeButton')
+    document.getElementById('allEvents').classList.add('eventTypeButtonFocus')
 
-        allToggle = true;
-        numEvents.innerText = "18"
+    allToggle = true;
+    numEvents.innerText = "18"
 
-        removeModel("flames")
-        removeModel("sun")
+    removeModel("flames")
+    removeModel("sun")
 
-        addModel("storm")
-        removeModel("stormP")
+    addModel("storm")
+    removeModel("stormP")
 
-        addModel("drought")
-        removeModel("droughtP")
+    addModel("drought")
+    removeModel("droughtP")
 
-        addModel("heat")
-        removeModel("heatP")
+    addModel("heat")
+    removeModel("heatP")
 
-        timePeriod = "Pre"
+    timePeriod = "Pre"
+
+    document.getElementById('eventHeader').innerText = "Weather Events"
+    document.getElementById('eventCaption').innerText = "The different symbols show the type of extreme weather event."
 });
 
 document.getElementById('post2011').addEventListener("click", function myScript(){
@@ -227,6 +236,9 @@ document.getElementById('post2011').addEventListener("click", function myScript(
     numEvents.innerText = "234"
 
     timePeriod = "Post"
+
+    document.getElementById('eventHeader').innerText = "Weather Events"
+    document.getElementById('eventCaption').innerText = "The different symbols show the type of extreme weather event."
 });
 
 
@@ -238,6 +250,7 @@ document.getElementById('post2011').addEventListener("click", function myScript(
 document.getElementById('firesButton').addEventListener("click", function myScript(){
     firesToggle = !firesToggle;
     updateButton(document.getElementById('firesButton'), firesToggle, 16, 0 , 16, "flames" )
+
 });
 
 document.getElementById('stormButton').addEventListener("click", function myScript(){
@@ -292,6 +305,30 @@ function updateButton(button, toggle, value, pre, post, name, post_name){
         button.classList.remove('eventTypeButton')
         button.classList.add('eventTypeButtonFocus')
 
+
+        if(name =="flames"){
+            document.getElementById('eventHeader').innerText = "Wildfires"
+            document.getElementById('eventCaption').innerText = "Extreme fires in areas of combustible vegetation."
+        }
+        if(name =="storm") {
+            document.getElementById('eventHeader').innerText = "Storms"
+            document.getElementById('eventCaption').innerText = "Atypical storm events, many causing unprecedented damage."
+        }
+
+        if(name =="drought") {
+            document.getElementById('eventHeader').innerText = "Droughts"
+            document.getElementById('eventCaption').innerText = "Prolonged periods of abnormally low rainfall."
+        }
+
+        if(name =="sun") {
+            document.getElementById('eventHeader').innerText = "Abnormal Sunshine"
+            document.getElementById('eventCaption').innerText = "Atypical sunshine patterns as a result of climate changes."
+        }
+
+        if(name =="heat") {
+            document.getElementById('eventHeader').innerText = "Heatwaves"
+            document.getElementById('eventCaption').innerText = "Excessively hot weather that deviates greatly from an area's usual temperatures. "
+        }
 
         //Display number of events based on time period
         if(timePeriod == "All"){
@@ -403,6 +440,9 @@ document.getElementById('allEvents').addEventListener("click", function myScript
         document.getElementById('sunButton').classList.remove('eventTypeButtonFocus')
         document.getElementById('sunButton').classList.add('eventTypeButton')
         sunToggle = false;
+
+        document.getElementById('eventHeader').innerText = "Weather Events"
+        document.getElementById('eventCaption').innerText = "The different symbols show the type of extreme weather event."
 
 
         if(timePeriod == "All"){
