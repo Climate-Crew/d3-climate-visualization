@@ -55,6 +55,8 @@ document.getElementById('AllDates').addEventListener("click", function myScript(
     addModel("stormP")
     addModel("drought")
     addModel("droughtP")
+    addModel("heat")
+    addModel("heatP")
 
         numEvents.innerText = "252"
 
@@ -111,6 +113,9 @@ document.getElementById('pre2011').addEventListener("click", function myScript()
         addModel("drought")
         removeModel("droughtP")
 
+        addModel("heat")
+        removeModel("heatP")
+
         timePeriod = "Pre"
 });
 
@@ -160,6 +165,9 @@ document.getElementById('post2011').addEventListener("click", function myScript(
     addModel("droughtP")
     removeModel("drought")
 
+    addModel("heatP")
+    removeModel("heat")
+
     numEvents.innerText = "234"
 
     timePeriod = "Post"
@@ -191,7 +199,7 @@ document.getElementById('droughtButton').addEventListener("click", function mySc
 
 document.getElementById('heatButton').addEventListener("click", function myScript(){
     heatToggle = !heatToggle;
-    updateButton(document.getElementById('heatButton'), heatToggle, 132 , 9, 123)
+    updateButton(document.getElementById('heatButton'), heatToggle, 132 , 9, 123, "heat", "heatP")
 
 });
 
@@ -220,6 +228,8 @@ function updateButton(button, toggle, value, pre, post, name, post_name){
         removeModel("stormP")
         removeModel("drought")
         removeModel("droughtP")
+        removeModel("heat")
+        removeModel("heatP")
     }
 
     if(toggle){
@@ -242,10 +252,10 @@ function updateButton(button, toggle, value, pre, post, name, post_name){
             if(name == "flames" || name == "sun"){
                 removeModel(name)
             }
-            if(name == "storm" || name == "drought"){
+            if(name == "storm" || name == "drought" || name == "heat"){
                 addModel(name)
             }
-            if(post_name == "stormP" || post_name == "droughtP"){
+            if(post_name == "stormP" || post_name == "droughtP" || post_name == "heatP"){
                 removeModel(post_name)
             }
 
@@ -257,10 +267,10 @@ function updateButton(button, toggle, value, pre, post, name, post_name){
             if(name == "flames" || name == "sun"){
                 addModel(name)
             }
-            if(name == "storm" || name == "drought"){
+            if(name == "storm" || name == "drought" || name == "heat"){
                 removeModel(name)
             }
-            if(post_name == "stormP" || post_name == "droughtP"){
+            if(post_name == "stormP" || post_name == "droughtP" || post_name == "heatP"){
                 addModel(post_name)
             }
         }
@@ -274,27 +284,27 @@ function updateButton(button, toggle, value, pre, post, name, post_name){
         if(timePeriod == "All"){
             numEventsVal -= value
             numEvents.innerText = numEventsVal.toString();
-            if(name == "flames" || name == "sun" || name == "storm" || name == "drought"){
+            if(name == "flames" || name == "sun" || name == "storm" || name == "drought" || name == "heat"){
                 removeModel(name)
             }
-            if(post_name == "stormP" || post_name == "droughtP"){
+            if(post_name == "stormP" || post_name == "droughtP" || post_name == "heatP"){
                 removeModel(post_name)
             }
         }
         if(timePeriod == "Pre"){
             numEventsVal -= pre
             numEvents.innerText = numEventsVal.toString();
-            if(name == "flames" || name == "sun" || name == "storm" || name == "drought"){
+            if(name == "flames" || name == "sun" || name == "storm" || name == "drought" || name == "heat"){
                 removeModel(name)
             }
         }
         if(timePeriod == "Post"){
             numEventsVal -= post
             numEvents.innerText = numEventsVal.toString();
-            if(name == "flames" || name == "sun" || name == "storm" || name == "drought"){
+            if(name == "flames" || name == "sun" || name == "storm" || name == "drought" || name == "heat"){
                 removeModel(name)
             }
-            if(post_name == "stormP" || post_name == "droughtP"){
+            if(post_name == "stormP" || post_name == "droughtP" || post_name == "heatP"){
                 removeModel(post_name)
             }
         }
@@ -347,11 +357,14 @@ document.getElementById('allEvents').addEventListener("click", function myScript
             addModel("stormP")
             addModel("drought")
             addModel("droughtP")
+            addModel("heat")
+            addModel("heatP")
         }
         if(timePeriod == "Pre"){
             numEvents.innerText = "18"
             addModel("storm")
             addModel("drought")
+            addModel("heat")
         }
         if(timePeriod == "Post"){
             numEvents.innerText = "234"
@@ -359,6 +372,7 @@ document.getElementById('allEvents').addEventListener("click", function myScript
             addModel("sun")
             addModel("stormP")
             addModel("droughtP")
+            addModel("heatP")
         }
 
 
@@ -375,6 +389,8 @@ document.getElementById('allEvents').addEventListener("click", function myScript
         removeModel("stormP")
         removeModel("drought")
         removeModel("droughtP")
+        removeModel("heat")
+        removeModel("heatP")
 
         numEvents.innerText = "0"
     }

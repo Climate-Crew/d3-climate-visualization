@@ -9,6 +9,9 @@ var storms_post_mesh;
 var drought_pre_mesh;
 var drought_post_mesh;
 
+var heat_pre_mesh;
+var heat_post_mesh;
+
 (function() {
     const container = document.getElementById("globe");
     const canvas = container.getElementsByTagName("canvas")[0];
@@ -111,10 +114,14 @@ var drought_post_mesh;
         })
         loader.load('./3d_assets/heat_pre.glb', function ( gltf ) {
             scene.add(gltf.scene);
+            heat_pre_mesh = gltf.scene
+            heat_pre_mesh.visible = true;
 
         })
         loader.load('./3d_assets/heat_post.glb', function ( gltf ) {
             scene.add(gltf.scene);
+            heat_post_mesh = gltf.scene
+            heat_post_mesh.visible = true;
 
         })
 
@@ -223,6 +230,12 @@ function addModel(name){
     if(name == "droughtP"){
         drought_post_mesh.visible = true;
     }
+    if(name == "heat"){
+        heat_pre_mesh.visible = true;
+    }
+    if(name == "heatP"){
+        heat_post_mesh.visible = true;
+    }
 }
 
 
@@ -245,6 +258,12 @@ function removeModel(name){
     }
     if(name == "droughtP"){
         drought_post_mesh.visible = false;
+    }
+    if(name == "heat"){
+        heat_pre_mesh.visible = false;
+    }
+    if(name == "heatP"){
+        heat_post_mesh.visible = false;
     }
 
 }
