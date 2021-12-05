@@ -1031,4 +1031,14 @@ ul {
   background: url("../img/cd-arrow-bottom.svg") no-repeat center center;
 }
 
+.btn1 {background-color: #cccccc;} /* Grey */
+
+.btn1 {
+  transition-duration: 0.3s;
+}
+
+.btn1:hover {
+  background-color: #b67472; /* Green */
+  color: white;
+}
 
