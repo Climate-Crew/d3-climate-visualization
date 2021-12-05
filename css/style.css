@@ -120,8 +120,11 @@ var(--text-light)
 }
 
 .overtext {
+  font-size: 40px;
+  color: white;
   position: absolute;
-  bottom: 8px;
+  font-family: Poppins;
+  top: 20 px;
   left: 16px;
 }
 
