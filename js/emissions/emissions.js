@@ -7,7 +7,7 @@ class StackedAreaChart {
         this.data = data;
         this.displayData = Array.from(d3_7.group(this.data[0], d => d.Entity))[0][1]
 
-        console.log("Stacked Area Chart Data:", this.displayData)
+        // console.log("Stacked Area Chart Data:", this.displayData)
 
         this.dataCategories = [];
 
@@ -32,8 +32,8 @@ class StackedAreaChart {
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom
 
-        console.log(vis.width)
-        console.log(vis.height)
+        // console.log(vis.width)
+        // console.log(vis.height)
 
         // SVG drawing area
         vis.svg = d3_7.select("#" + vis.parentElement).append("svg")

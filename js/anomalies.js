@@ -45,7 +45,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
         return {date: parseDate(temp[0].replace('/', '-') + '-1'), mean_temp: +temp[1]}  //'-') + '-01'
     });
 //var data = d3_3.csv.parseRows(text);
-console.log(climateData);
+// console.log(climateData);
 
 
 //Set the minimum inner radius and max outer radius of the chart

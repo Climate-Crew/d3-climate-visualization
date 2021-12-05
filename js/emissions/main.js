@@ -6,7 +6,7 @@ let areachart, timeline;
 
 var loc = window.location.pathname;
 var dir = loc.substring(0, loc.lastIndexOf('/'));
-console.log('Directory tree is', dir)
+// console.log('Directory tree is', dir)
 
 let promises = [
 	d3_7.csv("data/annual-emissions-by-country.csv")
@@ -14,7 +14,7 @@ let promises = [
 
 Promise.all(promises)
 	.then(function (data) {
-		console.log('This is the data',data)
+		// console.log('This is the data',data)
 		createVis(data)
 	})
 	.catch(function (err) {
