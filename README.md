@@ -8,7 +8,9 @@
 
 **Goal:** Helping to illustrate global changes in extreme weather through interactive visualization.
 
-In recent years, we have grown used to climate records being broken on a regular basis. While this may not seem important at first, it is in fact strong evidence that displays the impact that global warming is having upon our world. With our project, we would like to provide people with visualizations that make the impact of climate change clear and undeniable by focusing on global changes in weather through the prevalence of extreme weather events. We use scraped data from the National Weather Service, extreme weather data from NOAA, as well as other datasets outlined below. All datasets used in these visualizations are publicly available and from reliable government or intergovernmental sources. Links to all data sources are provided for transparency.
+In recent years, we have grown used to climate records being broken on a regular basis. While this may seem unimportant at first, it is, in fact, largely attributable to climate change. As the drivers of climate change go unperturbed, the prevalence of climate records and extreme weather events is expected to increase.
+
+Through this data story, we draw upon changes in extreme weather and their impact on society at three levels of analysis: the global level, the city level, and the human level.
 
 The hosted interactive website can be found [here](https://climate-crew.github.io/d3-climate-visualization/). We hope you find our visualizations both enjoy our visualizations and find them enlightening!
 
