@@ -152,7 +152,7 @@ var(--text-light)
   text-align: center;
   top: 30 px;
   left: 16px;
-  text-shadow: -3px 0 lightgrey, 0 1px darkgrey, 3px 0 grey, 0 -2px darkgrey;
+  text-shadow: -2px 0 darkgrey, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
 }
 
 .intro-row {
@@ -1105,12 +1105,16 @@ ul {
   color: var(--warm-palette-4);
   font-size: 100px;
   padding-top: 20px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
 }
 
 .fa-user:hover {
   color:  var(--warm-palette-4);
   font-size: 100px;
   padding-top: 20px;
+  top: -10px;
 }
 
 .countryName{
