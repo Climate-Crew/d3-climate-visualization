@@ -1148,3 +1148,20 @@ ul {
   color: #d49f5b;
 }
 
+.numDeaths {
+  color: #ce6d5a;
+  font-weight: bolder;
+  float: left;
+  padding-left: 4%;
+  font-size: 18px
+}
+
+.perDeath{
+  color: #ce6d5a;
+  font-weight: normal;
+  float: left;
+  padding-left: 15%;
+  font-size: 18px
+}
+
+
