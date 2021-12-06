@@ -150,8 +150,9 @@ var(--text-light)
   position: absolute;
   font-family: Poppins;
   text-align: center;
-  top: 20 px;
+  top: 30 px;
   left: 16px;
+  text-shadow: -1px 0 black, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
 }
 
 /**/
@@ -577,8 +578,18 @@ body img {
 
 .scuro {
   width: 100%;
-  background-color: var(--warm-palette-1);
   padding: 5em 0;
+  background:
+          linear-gradient(
+                  to bottom,
+                  lightgray,
+                  transparent
+          ),
+          linear-gradient(
+                  to right,
+                  var(--warm-palette-1-opaque),
+                  var(--warm-palette-5-opaque)
+          );
 }
 
 .scuro i {
@@ -1020,7 +1031,7 @@ ul {
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: var(--warm-palette-1);
+  background-color: whitesmoke;
   -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
   -moz-transition: -moz-transform 0.2s, background-color 0.5s;
   transition: transform 0.2s, background-color 0.5s;
@@ -1029,13 +1040,13 @@ ul {
   -ms-transform-origin: 50% 50%;
   -o-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  opacity: 0.4;
+  /*opacity: 0.4;*/
 }
 
 
 #cd-vertical-nav .cd-label {
   position: relative;
-  color: var(--warm-palette-1);
+  color: whitesmoke;
   font-size: 21px;
   padding-top: 10px;
   padding-left: 12px;
