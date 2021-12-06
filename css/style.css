@@ -1077,3 +1077,26 @@ ul {
   color: white;
 }
 
+.personIcon{
+  color: var(--warm-palette-1);
+  font-size: 100px;
+}
+
+.fa-user {
+  color: var(--warm-palette-4);
+  font-size: 80px;
+}
+
+.fa-user:hover {
+  color:  var(--warm-palette-4);
+  font-size: 80px;
+}
+
+.countryName{
+  color:  var(--warm-palette-4);
+  font-size: 15px;
+  font-family: Poppins;
+  text-align: center;
+}
+
+
