@@ -125,7 +125,7 @@ var(--text-light)
   color: white;
   font-family: Poppins;
   font-size: 30px;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 .section-col h1 {
