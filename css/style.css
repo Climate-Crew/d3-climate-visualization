@@ -154,6 +154,10 @@ var(--text-light)
   left: 16px;
 }
 
+.radial-info-col {
+  width: 72%;
+}
+
 /**/
 
 ::selection {
