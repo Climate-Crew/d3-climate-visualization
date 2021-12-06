@@ -129,6 +129,7 @@ var(--text-light)
   text-align: center;
   padding-top: 10%;
   padding-bottom: 10%;
+  padding-left: 10%;
 }
 
 .overtext {
