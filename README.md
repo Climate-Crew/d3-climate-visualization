@@ -12,8 +12,6 @@ In recent years, we have grown used to climate records being broken on a regular
 
 The hosted interactive website can be found [here](https://climate-crew.github.io/d3-climate-visualization/). We hope you both enjoy our visualizations and find them enlightening!
 
-A Streamcast video showing a walkthrough of the data story can be found [here](https://streamcastnetwork.com/).
-
 ## Global Story
 
 Our global story first discusses how global temperature anomalies have changed through the last century using a weather radial visualization with open-source NOAA data. This is followed by a discussion of how these temperatures are influenced by greenhouse gas emissions using a carbon emissions streamgraph, with information obtained from the International Energy Agency. The final visualization outlines different extreme weather events superimposed on a 3D globe, developed using [Three.js](https://threejs.org/), and how these have become more prevalent in recent years as a result of climate change.
