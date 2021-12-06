@@ -152,7 +152,7 @@ var(--text-light)
 }
 
 .section-col h5 {
-  font-size: 25px;
+  font-size: 18px;
   color: #383838;
   margin-bottom: 20px;
   font-family: sans-serif;
@@ -459,7 +459,7 @@ a, a:hover {
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   background: transparent;
-  color: var(--warm-palette-1) !important;
+  color: #c26565 !important;
   text-decoration: none;
 }
 
@@ -911,12 +911,12 @@ body.loading .modal {
   /* The progress bar (scroll indicator) */
   .progress-bar {
     height: 5px;
-    background: var(--warm-palette-1);
+    background: #c26565;
     width: 0%;
   }
 
   .project-link{
-    color: var(--warm-palette-1);
+    color: #c26565;
   }
 
 
@@ -1147,13 +1147,13 @@ ul {
 }
 
 .americas{
-  color: var(--warm-palette-1);
+  color: #d49f5b;
 }
 .europe{
-  color: var(--warm-palette-2);
+  color: #c26565;
 }
 .africa{
-  color: var(--warm-palette-3);
+  color: var(--warm-palette-5);
 }
 .asia{
   color: var(--warm-palette-4);
@@ -1166,7 +1166,7 @@ ul {
 }
 
 .numDeaths {
-  color: #ce6d5a;
+  color: #c26565;
   font-weight: bolder;
   float: left;
   padding-left: 6%;
@@ -1174,7 +1174,7 @@ ul {
 }
 
 .perDeath{
-  color: #ce6d5a;
+  color: #c26565;
   font-weight: normal;
   float: left;
   padding-left: 15%;
@@ -1194,15 +1194,15 @@ ul {
 }
 
 .heatDateButton:hover{
-  color: var(--warm-palette-4);
-  border: 1px solid var(--warm-palette-4);
+  color: #ce6d5a;
+  border: 1px solid #c26565;
 }
 
 .heatDateButtonFocus{
   border-radius: 5px;
-  background-color: var(--warm-palette-4);
+  background-color: #c26565;
   color: white;
-  border: 1px solid var(--warm-palette-4);
+  border: 1px solid #c26565;
   padding: 5px;
   width: 10%;
   font-weight: bold;
