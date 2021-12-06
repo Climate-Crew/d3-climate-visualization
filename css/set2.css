@@ -127,7 +127,7 @@ figure.effect-julia p {
 	color: #2f3238;
 	text-transform: none;
 	font-weight: 500;
-	font-size: 35%;
+	font-size: 40%;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(-360px,0,0);
