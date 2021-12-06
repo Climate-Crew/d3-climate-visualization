@@ -101,6 +101,8 @@ var(--text-light)
   padding-right: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: white;
+  font-family: Poppins;
 }
 
 .section-col p {
