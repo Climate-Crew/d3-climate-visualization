@@ -32,6 +32,7 @@
 		.attr("y",  height1 + margin1.bottom)
 		.style("text-anchor", "middle")
 		.style("font-size", "15px")
+		.style("color","#0f0308")
 		.text("Cities");
 
 
@@ -51,6 +52,7 @@
 		.attr("dy", "1em")
 		.style("text-anchor", "middle")
 		.style("font-size", "15px")
+		.style("color","#0f0308")
 		.text("Cooling Degree Days (CDD)");
 
 
