@@ -128,7 +128,7 @@ var(--text-light)
   margin-top: 20px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 1.5%;
+  padding-top: 0%;
   padding-left: 4%;
 }
 
@@ -138,7 +138,7 @@ var(--text-light)
   margin-bottom: 20px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 1.5%;
+  padding-top: 0%;
   padding-left: 4%;
 }
 
