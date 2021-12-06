@@ -118,8 +118,9 @@ var(--text-light)
   margin-top: 20px;
   font-family: Poppins;
   text-align: center;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  padding-left: 2%;
 }
 
 .section-col h4 {
@@ -129,7 +130,7 @@ var(--text-light)
   margin-top: 20px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 2.5%;
+  padding-top: 0%;
   padding-left: 4%;
 }
 
@@ -137,10 +138,9 @@ var(--text-light)
   font-size: 15px;
   color: #383838;
   margin-bottom: 20px;
-  margin-top: 10px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 2.5%;
+  padding-top: 0%;
   padding-left: 4%;
 }
 
@@ -1079,6 +1079,7 @@ ul {
   color: white;
 }
 
+
 .personIcon{
   color: var(--warm-palette-1);
   font-size: 100px;
@@ -1086,19 +1087,20 @@ ul {
 
 .fa-user {
   color: var(--warm-palette-4);
-  font-size: 80px;
+  font-size: 100px;
+  padding-top: 20px;
 }
 
 .fa-user:hover {
   color:  var(--warm-palette-4);
-  font-size: 80px;
+  font-size: 100px;
+  padding-top: 20px;
 }
 
 .countryName{
   color:  var(--warm-palette-4);
   font-size: 15px;
   font-family: Poppins;
-  text-align: center;
 }
 
 .americas{
@@ -1116,6 +1118,7 @@ ul {
 .oceania{
   color: var(--warm-palette-5);
 }
-
-
+.global{
+  color: #d49f5b;
+}
 
