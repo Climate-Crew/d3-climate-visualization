@@ -22,7 +22,7 @@ Our global story first discusses how global temperature anomalies have changed t
 
 ## City Story
 
-The city story focuses on how changes in extreme weather are impacting cities. First, a discussion of cooling degree days is given, illustrating the cooling challenges that warmer climates will face in the future as a result of changing climate patterns. This is followed by a visualization showing a matrix of nine cities and their cooling exposures, developed using [Rhino](https://www.rhino3d.com/), [Grasshopper](https://www.rhino3d.com/6/new/grasshopper/) to extract cooling degree days, energy, and weather files. This leads us naturally to our last section, looking at the level of the individual.
+The city story focuses on how changes in extreme weather are impacting cities. First, a discussion of cooling degree days is given, illustrating the cooling challenges that warmer climates will face in the future as a result of changing climate patterns. This is followed by a visualization showing a matrix of nine cities and their cooling exposures, developed using [Rhino](https://www.rhino3d.com/), with [Grasshopper](https://www.rhino3d.com/6/new/grasshopper/) to extract cooling degree days, energy, and weather files. This leads us naturally to our last section, looking at the level of the individual.
 
 ![City Visualization](img/city_matrix.png?raw=true "Title")
 
