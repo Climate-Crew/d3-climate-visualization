@@ -1099,4 +1099,21 @@ ul {
   text-align: center;
 }
 
+.americas{
+  color: var(--warm-palette-1);
+}
+.europe{
+  color: var(--warm-palette-2);
+}
+.africa{
+  color: var(--warm-palette-3);
+}
+.asia{
+  color: var(--warm-palette-4);
+}
+.oceania{
+  color: var(--warm-palette-5);
+}
+
+
 
