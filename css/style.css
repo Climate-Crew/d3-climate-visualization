@@ -116,8 +116,9 @@ var(--text-light)
   margin-top: 20px;
   font-family: Poppins;
   text-align: center;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  padding-left: 2%;
 }
 
 .section-col h4 {
@@ -127,7 +128,7 @@ var(--text-light)
   margin-top: 20px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 2.5%;
+  padding-top: 1.5%;
   padding-left: 4%;
 }
 
@@ -135,10 +136,9 @@ var(--text-light)
   font-size: 15px;
   color: #383838;
   margin-bottom: 20px;
-  margin-top: 10px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 2.5%;
+  padding-top: 1.5%;
   padding-left: 4%;
 }
 
