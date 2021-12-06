@@ -127,7 +127,8 @@ var(--text-light)
   margin-top: 20px;
   font-family: Poppins;
   text-align: center;
-  padding-left: 2%;
+  padding-top: 3%;
+  padding-left: 5%;
 }
 
 .overtext {
