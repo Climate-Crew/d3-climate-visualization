@@ -155,6 +155,10 @@ var(--text-light)
   text-shadow: -1px 0 black, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
 }
 
+.intro-row {
+  background-color: lightgray;
+}
+
 /**/
 
 ::selection {
