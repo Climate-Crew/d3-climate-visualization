@@ -1166,7 +1166,7 @@ ul {
 }
 
 .numDeaths {
-  color: #ce6d5a;
+  color: #c26565;
   font-weight: bolder;
   float: left;
   padding-left: 6%;
@@ -1174,7 +1174,7 @@ ul {
 }
 
 .perDeath{
-  color: #ce6d5a;
+  color: #c26565;
   font-weight: normal;
   float: left;
   padding-left: 15%;
