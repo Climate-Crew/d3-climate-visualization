@@ -1,10 +1,10 @@
 
 
 var margin = {
-    top: -165,
+    top: -160,
     right: 20,
     bottom: 0,
-    left: -500
+    left: -600
 };
 var width = window.innerWidth - margin.left - margin.right;
 var height = window.innerHeight - margin.top - margin.bottom;
