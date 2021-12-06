@@ -169,6 +169,7 @@ var(--text-light)
   text-align: center;
   top: 30 px;
   left: 16px;
+  opacity: 0.8;
   text-shadow: -3px 0 black, 0 1px black, 1px 0 black, 0 -1px darkgrey;
 }
 
