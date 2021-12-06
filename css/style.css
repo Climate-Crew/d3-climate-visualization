@@ -158,6 +158,10 @@ var(--text-light)
   width: 72%;
 }
 
+.intro-row {
+  background-color: lightgray;
+}
+
 /**/
 
 ::selection {
