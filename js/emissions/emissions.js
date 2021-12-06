@@ -27,7 +27,7 @@ class StackedAreaChart {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 60, right: 20, bottom: 470, left: 0};
+        vis.margin = {top: 20, right: 20, bottom: 230, left: 100};
 
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom
@@ -72,10 +72,22 @@ class StackedAreaChart {
             .domain([0, 1.8E10])
             .range([ vis.height, 0 ]);
 
+        var customPalette = [
+            '#973d73',
+            '#a64861',
+            '#c3655d',
+            '#ce6d5a',
+            '#d28c5c',
+            '#134f5c',
+            '#45818e',
+            '#8c9d85',
+            '#92b7bf'
+        ]
         // color palette
         vis.color = d3_7.scaleOrdinal()
             .domain(vis.keys)
-            .range(d3_7.schemeGreens[9]);
+            .range(customPalette)
+            // .range(d3_7.schemeGreens[9]);
 
         //stack the data?
         vis.stackedData = d3_7.stack()
