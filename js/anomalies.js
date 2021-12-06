@@ -1,18 +1,18 @@
 
 
 var margin = {
-    top: 20,
+    top: -230,
     right: 20,
     bottom: 0,
-    left: 20
+    left: -700
 };
-var width = window.innerWidth - margin.left - margin.right - 300;
-var height = window.innerHeight - margin.top - margin.bottom + 50;
+var width = window.innerWidth - margin.left - margin.right;
+var height = window.innerHeight - margin.top - margin.bottom;
 
 var domLow = -1.5,  //-15, low end of data
     domHigh = 1.25,  //30, high end of data
     axisTicks = [-1, 0, 1],   //[-20,-10,0,10,20,30];  [-2,-1,0,1,2,3];  [-1.5,-0.5,0.5,1.5];
-    duration = 25000; //100000, 50000
+    duration = 20000; //100000, 50000
 
 //SVG container
 var svg = d3_3.select("#weatherRadial")
@@ -36,12 +36,10 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
         years.push(temp[0].split('/')[0]);
         return {date: parseDate(temp[0].replace('/', '-') + '-1'), mean_temp: +temp[1]}  //'-') + '-01'
     });
-//var data = d3_3.csv.parseRows(text);
-// console.log(climateData);
 
 
 //Set the minimum inner radius and max outer radius of the chart
-    var outerRadius = Math.min(width, height, 700)/2,
+    var outerRadius = Math.min(width, height, 580)/2,
         innerRadius = outerRadius * 0.1;  //Sets the ratio.  Smaller magnifies differences. 0.1 good, 0.15
 
 //Base the color scale on average temperature extremes
@@ -54,12 +52,6 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
     var distScale = d3_3.scale.linear()
         .range([innerRadius, outerRadius])
         .domain([domLow, domHigh]);
-
-//Scale to turn the date into an angle of 360 degrees in total
-//With the first datapoint (Jan 1st) on top
-// var angle = d3_3.scale.linear()
-//     .range([-180, 180])
-//     .domain(d3_3.extent(climateData, function(d) { return d.date; }));
 
 //Function to convert date into radians for path function
 //The radial scale in this case starts with 0 at 90 degrees
@@ -75,32 +67,26 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Append title to the top
     textWrapper.append("text")
         .attr("class", "spiral-title")
-        .style('fill', 'black')
+        .style('fill', 'white')
         .attr("x", 0)
         .attr("y", -outerRadius - 40)
-        .text("Global Temperature Anomaly");
+        .text("Global Temperature Anomaly").style("font-weight", "bold");
 
 //Subtitle:
     textWrapper.append("text")
         .attr("class", "spiral-subtitle")
-        .style('fill', 'black')
+        .style('fill', 'white')
         .attr("x", 0)
-        .attr("y", 0)
+        .attr("y", -100)
         .text('January 1850 - March 2020');
 
 //Append play button
     var play = textWrapper.append("text")
         .attr("class", "play")
-        .style('fill', 'black')
+        .style('fill', 'white')
         .attr("x", 0)
         .attr("y", -outerRadius + 30)
         .text("\u25B7")  //unicode triangle: U+25B2  \u25b2
-
-
-
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////// Create Axes /////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
 
 //Wrapper for the bars and to position it downward
     var barWrapper = svg.append("g")
@@ -109,43 +95,99 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Draw gridlines below the bars
     var axes = barWrapper.selectAll(".gridCircles")
         .data(axisTicks)
-        .enter().append("g").attr("stroke", "black");
+        .enter().append("g").attr("stroke", "white");
 //Draw the circles
     axes.append("circle")
         .attr("class", "axisCircles")
-        .attr("r", function(d) { return distScale(d); }).style("stroke", "black");
+        .attr("r", function(d) { return distScale(d); }).style("stroke", "white");
 //Draw the axis labels
     axes.append("text")
         .attr("class", "axisText")
-        .attr("y", function(d) { return distScale(d) - 8; })
+        .attr("y", function(d) { return distScale(d) - 15 ; })
+        .attr("x", 15)
         .attr("dy", "0.3em")
         .text(function(d) { return d + "°C"});
 
 //Add January for reference
     barWrapper.append("text")
         .attr("class", "january")
-        .style('fill', 'black')
+        .style('fill', 'white')
         .attr("x", 7)
         .attr("y", -outerRadius * 1.1)
         .attr("dy", "0.9em")
         .text("January");
+
+    //Add January for reference
+    barWrapper.append("text")
+        .attr("class", "january")
+        .style('fill', 'white')
+        .attr("x", outerRadius * 1.02)
+        .attr("y", 10)
+        .attr("dy", "0.9em")
+        .text("April");
+
+    //Add January for reference
+    barWrapper.append("text")
+        .attr("class", "january")
+        .style('fill', 'white')
+        .attr("x", -outerRadius * 1.2)
+        .attr("y", 10)
+        .attr("dy", "0.9em")
+        .text("October");
+
+    //Add January for reference
+    barWrapper.append("text")
+        .attr("class", "january")
+        .style('fill', 'white')
+        .attr("x", 7)
+        .attr("y", outerRadius * 1.04)
+        .attr("dy", "0.9em")
+        .text("July");
+
 //Add a line to split the year
     barWrapper.append("line")
         .attr("class", "yearLine")
-        .style("stroke", "black")
+        .style("stroke", "white")
         .attr("x1", 0)
-        .attr("y1", -innerRadius * 1.8)  //.65
+        .attr("y1", -innerRadius * 1.02)  //.65
         .attr("x2", 0)
         .attr("y2", -outerRadius * 1.1);
+
+    //Add a line to split the year
+    barWrapper.append("line")
+        .attr("class", "yearLine")
+        .style("stroke", "white")
+        .attr("x1", 0)
+        .attr("y1", +innerRadius * 1.02)  //.65
+        .attr("x2", 0)
+        .attr("y2", +outerRadius * 1.1);
+
+    //Add a line to split the year
+    barWrapper.append("line")
+        .attr("class", "yearLine")
+        .style("stroke", "white")
+        .attr("x1", innerRadius * 1.8)
+        .attr("y1", 0)  //.65
+        .attr("x2", outerRadius * 1.14)
+        .attr("y2", 0);
+
+    //Add a line to split the year
+    barWrapper.append("line")
+        .attr("class", "yearLine")
+        .style("stroke", "white")
+        .attr("x1", -innerRadius * 1.8)
+        .attr("y1", 0)  //.65
+        .attr("x2", -outerRadius * 1.2)
+        .attr("y2", 0);
 
 //Add year in center
     barWrapper.append("text")
         .attr("class", "yearText")
-        .style('fill', 'black')
-        .attr("x", -22)
-        .attr("y", 0)
+        .style('fill', 'white')
+        .attr("x", -37)
+        .attr("y", 11)
         //.attr("dy", "0.9em")
-        .text("1850");
+        .text("1850").style("font-weight", "bold").style("font-size", "28px");
 
 //Calculate the variables for the temp gradient
     var numStops = 10;
@@ -186,6 +228,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
             .attr("class", "line")
             .attr("x", -0.75)
             .style("stroke", "url(#radial-gradient)")
+            .attr("stroke-opacity", 0.75);
         //.datum(climateData);  attaches all data
 
         var totalLength = path.node().getTotalLength();
@@ -253,7 +296,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 //Append title
     legendsvg.append("text")
         .attr("class", "legendTitle")
-        .style("fill", "black")
+        .style("fill", "white")
         .attr("x", 0)
         .attr("y", -10)
         .style("text-anchor", "middle")
@@ -275,7 +318,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
     legendsvg.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + (10) + ")")
-        .style("fill", "black")
+        .style("fill", "white")
         .call(xAxis);
 
 }); //End data callback
