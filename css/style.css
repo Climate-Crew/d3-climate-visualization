@@ -152,7 +152,7 @@ var(--text-light)
   text-align: center;
   top: 30 px;
   left: 16px;
-  text-shadow: -1px 0 black, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
+  text-shadow: -2px 0 black, 0 1px darkgrey, 2px 0 darkgrey, 0 -2px darkgrey;
 }
 
 .intro-row {
@@ -162,7 +162,7 @@ var(--text-light)
 /**/
 
 ::selection {
-    color: darkorange;
+    color: darkgrey;
     background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,179,0,1) 100%, rgba(85,72,5,1) 100%, rgba(0,212,255,1) 100%);
 }
 
@@ -582,18 +582,8 @@ body img {
 
 .scuro {
   width: 100%;
+  background-color: var(--warm-palette-1);
   padding: 5em 0;
-  background:
-          linear-gradient(
-                  to bottom,
-                  lightgray,
-                  transparent
-          ),
-          linear-gradient(
-                  to right,
-                  var(--warm-palette-1-opaque),
-                  var(--warm-palette-5-opaque)
-          );
 }
 
 .scuro i {
@@ -913,7 +903,6 @@ body.loading .modal {
 #proj-gallery {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
-  border-radius: 1em;
 }
 
 
@@ -1036,7 +1025,7 @@ ul {
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: whitesmoke;
+  background-color: var(--warm-palette-1);
   -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
   -moz-transition: -moz-transform 0.2s, background-color 0.5s;
   transition: transform 0.2s, background-color 0.5s;
@@ -1045,13 +1034,13 @@ ul {
   -ms-transform-origin: 50% 50%;
   -o-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  /*opacity: 0.4;*/
+  opacity: 0.4;
 }
 
 
 #cd-vertical-nav .cd-label {
   position: relative;
-  color: whitesmoke;
+  color: var(--warm-palette-1);
   font-size: 21px;
   padding-top: 10px;
   padding-left: 12px;
