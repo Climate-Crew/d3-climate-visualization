@@ -75,7 +75,7 @@ class StackedAreaChart {
         // color palette
         vis.color = d3_7.scaleOrdinal()
             .domain(vis.keys)
-            .range(d3_7.schemeAccent);
+            .range(d3_7.schemeGreens[9]);
 
         //stack the data?
         vis.stackedData = d3_7.stack()
@@ -100,7 +100,8 @@ class StackedAreaChart {
                 .style("opacity", 1)
         }
         var mousemove = function(d,i) {
-            vis.Tooltip.text(i.key)
+            console.log(i[i.length -1][1]/(100000000))
+            vis.Tooltip.text(i.key + ' Cumulative Emissions: ' + (i[i.length -1][1]/(100000000)).toFixed(1).toString() + " Billion tonnes of CO2e").style('font-weight','bold').style('font-size', 20)
         }
         var mouseleave = function(d) {
             vis.Tooltip.style("opacity", 0)
@@ -133,7 +134,7 @@ class StackedAreaChart {
         vis.svg.append("g")
             .attr("class", "x-axis axis")
             .attr("transform", "translate(0," + vis.height + ")")
-            .call(vis.xAxis);
+            .call(vis.xAxis).style('font-weight','bold');
 
     }
 }
