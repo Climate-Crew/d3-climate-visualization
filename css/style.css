@@ -131,7 +131,7 @@ var(--text-light)
   font-family: Poppins;
   text-align: left;
   padding-top: 0%;
-  padding-left: 4%;
+  padding-left: 6%;
 }
 
 .section-col h5 {
@@ -141,7 +141,7 @@ var(--text-light)
   font-family: Poppins;
   text-align: left;
   padding-top: 0%;
-  padding-left: 4%;
+  padding-left: 6%;
 }
 
 .overtext {
@@ -1147,4 +1147,21 @@ ul {
 .global{
   color: #d49f5b;
 }
+
+.numDeaths {
+  color: #ce6d5a;
+  font-weight: bolder;
+  float: left;
+  padding-left: 6%;
+  font-size: 18px
+}
+
+.perDeath{
+  color: #ce6d5a;
+  font-weight: normal;
+  float: left;
+  padding-left: 15%;
+  font-size: 18px
+}
+
 
