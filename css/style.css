@@ -152,7 +152,7 @@ var(--text-light)
   text-align: center;
   top: 30 px;
   left: 16px;
-  text-shadow: -3px 0 lightgrey, 0 1px darkgrey, 3px 0 grey, 0 -2px darkgrey;
+  text-shadow: -2px 0 darkgrey, 0 1px darkgrey, 3px 0 grey, 0 -2px darkgrey;
 }
 
 .intro-row {
