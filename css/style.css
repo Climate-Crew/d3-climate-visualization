@@ -459,7 +459,7 @@ a, a:hover {
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
   background: transparent;
-  color: var(--warm-palette-1) !important;
+  color: #c26565 !important;
   text-decoration: none;
 }
 
@@ -911,12 +911,12 @@ body.loading .modal {
   /* The progress bar (scroll indicator) */
   .progress-bar {
     height: 5px;
-    background: var(--warm-palette-1);
+    background: #c26565;
     width: 0%;
   }
 
   .project-link{
-    color: var(--warm-palette-1);
+    color: #c26565;
   }
 
 
