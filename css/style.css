@@ -1105,12 +1105,16 @@ ul {
   color: var(--warm-palette-4);
   font-size: 100px;
   padding-top: 20px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
 }
 
 .fa-user:hover {
   color:  var(--warm-palette-4);
   font-size: 100px;
   padding-top: 20px;
+  top: -10px;
 }
 
 .countryName{
