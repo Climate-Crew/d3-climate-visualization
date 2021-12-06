@@ -53,13 +53,13 @@ var(--text-light)
 
 .main-title {
   color: white;
-  font-size: 65px;
+  font-size: 80px;
   font-weight: bold;
 }
 
 .main-subtitle {
-  color: lightgray;
-  font-size: 40px;
+  color: lightcyan;
+  font-size: 55px;
 }
 
 .icon-row {
@@ -68,6 +68,8 @@ var(--text-light)
 }
 
 .icon-elem {
+  font-size: 30px;
+  color: black;
   display: block;
 }
 
