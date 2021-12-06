@@ -12,6 +12,8 @@ In recent years, we have grown used to climate records being broken on a regular
 
 The hosted interactive website can be found [here](https://climate-crew.github.io/d3-climate-visualization/). We hope you find our visualizations both enjoy our visualizations and find them enlightening!
 
+![Globe Visualization](img/globe_visualization.png?raw=true "Title")
+
 ## Contributors
 
 **Alejandro Romero.** Brown University alumni pursuing a Master's program at Brown with coursework at Harvard University. <br>
