@@ -61,11 +61,12 @@ class StackedAreaChart {
         // Add X axis label:
         vis.svg.append("text")
             .attr("text-anchor", "end")
-            .attr("x", 150)
+            .attr("x", 120)
             .attr("y", vis.height + 50)
             .text("Time (year)")
             .style('font-family', 'Poppins')
-            .style('font-size', '12px');
+            .style('font-size', '16px')
+            .style('font-weight', 'bold');
 
         // Add Y axis
         vis.y = d3_7.scaleLinear()
@@ -134,7 +135,7 @@ class StackedAreaChart {
         vis.svg.append("g")
             .attr("class", "x-axis axis")
             .attr("transform", "translate(0," + vis.height + ")")
-            .call(vis.xAxis).style('font-weight','bold');
+            .call(vis.xAxis).style('font-weight','bold').style('font-size', 14);
 
     }
 }
