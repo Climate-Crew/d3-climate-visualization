@@ -12,7 +12,15 @@ In recent years, we have grown used to climate records being broken on a regular
 
 The hosted interactive website can be found [here](https://climate-crew.github.io/d3-climate-visualization/). We hope you find our visualizations both enjoy our visualizations and find them enlightening!
 
+## Global Story
+
+Our global story first discusses global temperature anomalies through the use of a weather radial from open-source NOAA data, followed by a carbon emissions streamgraph using information from the International Energy Agency. The final visualization shows different extreme weather events superimposed on a 3D globe, developed using [Three.js](https://threejs.org/).
+
 ![Globe Visualization](img/globe_visualization.png?raw=true "Title")
+
+## City Story
+
+## Human Story
 
 ## Contributors
 
