@@ -48,7 +48,7 @@ var(--text-light)
   text-align: center;
   height: 100%;
   width: 100%;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .main-title {
@@ -156,6 +156,12 @@ var(--text-light)
 }
 
 .intro-row {
+  /*background-color: lightgray;*/
+  width: 77%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro-section {
   background-color: lightgray;
 }
 
