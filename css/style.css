@@ -12,6 +12,7 @@
 
   --bw-palette-1 : #5d5d5d;
   --bw-palette-2 : #7f7f7f;
+  --bw-palette-3 : #d8d8d8;
 
   --cool-palette-1 : #134f5c;
   --cool-palette-2 : #45818e;
@@ -37,7 +38,7 @@ var(--text-light)
           linear-gradient(
                   to bottom,
                   transparent,
-                  lightgray
+                  var(--bw-palette-2)
           ),
           linear-gradient(
                   to right,
@@ -93,14 +94,30 @@ var(--text-light)
   background-color:  var(--bw-palette-1);
 }
 
+.model-vis-row {
+  background-color:  var(--bw-palette-3);
+}
+
+.fade-row {
+  /*background-image:  linear-gradient(*/
+  /*        to right,*/
+  /*        var(--bw-palette-1),*/
+  /*        var(--bw-palette-3) 20%,*/
+  /*        var(--bw-palette-3) 50%,*/
+  /*        var(--bw-palette-1) 89%*/
+  /*);*/
+}
+
 .section-col{
   width: 72%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  /*padding-top: 15px;*/
+  /*padding-bottom: 15px;*/
+  color: white;
+  font-family: Poppins;
 }
 
 .section-col p {
@@ -162,7 +179,7 @@ var(--text-light)
   margin-right: auto;
 }
 .intro-section {
-  background-color: lightgray;
+  background-color: var(--bw-palette-2);
 }
 
 /**/
@@ -592,7 +609,7 @@ body img {
   background:
           linear-gradient(
                   to bottom,
-                  lightgray,
+                  var(--bw-palette-2),
                   transparent
           ),
           linear-gradient(
