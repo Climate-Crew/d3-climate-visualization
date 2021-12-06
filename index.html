@@ -253,7 +253,7 @@
         <div class="col">
             <div class="row intro-row">
                 <div class="col section-col">
-                    <p style="color: black; font-size: 24px">
+                    <p style="font-size: 24px">
                         <br>
                         <br>
                         In recent years, we have grown used to climate records being broken on a regular basis. While this may seem unimportant at first, it is, in fact, largely attributable to climate change.
@@ -313,25 +313,17 @@
     </div>
 </section>
 
-<section class="section-template" id="part1">
-<!--    <div class="container">-->
-
-
-<!--        <div class="row">-->
-<!--            <div class="col-lg-12 col-sm-12 ml-auto col-md-12 col-xs-12">-->
-<!--                <h2 class="sec-header">Global Shifts</h2>-->
-
-<!--                <div id="riskRanking" style="height: 50vh"></div>-->
-
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </div>-->
-
+<section class="section-template" id="emissions">
     <div class="section-container">
+        <div class="col">
+            <div class="row section-image-row" style="overflow: hidden;">
+                <img src="img/smog.png">
+                <div class="overtext" style="font-size: 60px;  width: 90%; margin-left: 5%; margin-right: 5%; margin-top: 5%; text-align: center">Emissions</div>
+            </div>
+        </div>
         <div class="row section-text-row">
             <div class="col section-col">
-                <h1 class="section-text">
+                <h1 class="section-text" style="font-weight: bold; width: 78%; margin-left: 11%; margin-right: 11%;">
 
                     Temperature increases are largely attributable to greenhouse gas emissions, in particular CO<sub>2</sub> emissions.
                     <br>
@@ -345,14 +337,21 @@
         <div class="row section-vis-row">
             <div class="col section-col">
                 <div class="row">
+                    <p>
+                    <div style="margin-left: 8%"><h4>2020 CO2 Emissions by Country</h4>
+                        <h5>
+                            In this section we examine the scale of impact of various countries
+                        </h5>
+                </div>
+                <div class="row">
                     <div class="col section-col">
-                        <div class="row justify-content-center" style="height:50vh; width: 130%">
-                            <div id="global-emissions-stacked-area-chart" style="height: 100%; width: 130%"></div>
+                        <div class="row justify-content-center" style="height:50vh; width: 125vh">
+                            <div id="global-emissions-stacked-area-chart" style="height: 100%; width: 100%"></div>
                         </div>
                     </div>
                     <div class="col section-col">
-                        <div class="row" style="width: 65%; margin-left: auto; margin-top: 5%; margin-right: 5%; color:white">
-                            <div style="display: inline">In <a href="https://books.google.com/books/about/Something_New_Under_the_Sun_An_Environme.html?id=D4dOq9Llo_gC" style="color: #ce6d5a; font-weight: bold" class="links" target="_blank"><i>"An Environmental History of the 20th World"</i></a>, environmental historian <a href="https://en.wikipedia.org/wiki/J._R._McNeill" class="links" style="color: #ce6d5a; font-weight: bold" target="_blank">J. R. McNeill</a> remarks that during the late 19th century through to the end of the
+                        <div class="row" style="width: 65%; margin-left: 25%; margin-top: 5%; margin-right: 5%; color:white">
+                            <div style="">In <a href="https://books.google.com/books/about/Something_New_Under_the_Sun_An_Environme.html?id=D4dOq9Llo_gC" style="color: #ce6d5a; font-weight: bold" class="links" target="_blank"><i>"An Environmental History of the 20th World"</i></a>, environmental historian <a href="https://en.wikipedia.org/wiki/J._R._McNeill" class="links" style="color: #ce6d5a; font-weight: bold" target="_blank">J. R. McNeill</a> remarks that during the late 19th century through to the end of the
                             20th century, the world economy grew 14-fold, world population quadrupled, and energy consumption increased five-fold. These stark changes were brought about by the invention of artificial fertilizer, medicines and vaccines, as well as industrialization which massively improved human productivity. However, these changes also
                             resulted in an exponential increase in carbon dioxide, as well as <a href="https://en.wikipedia.org/wiki/Greenhouse_gas_emissions" style="color: #ce6d5a; font-weight: bold" class="links" target="_blank">other emissions</a>.</div>
                         </div>
@@ -390,8 +389,16 @@
 <!--                Threejs Globe-->
 
 
-<div class="flex-grid">
-    <div class="flexCol" id="globe">
+<div class="row section-vis-row">
+    <p>
+    <div style="margin-left: 9%; width: 100%; text-align: left"><h4>2020 CO2 Emissions by Country</h4>
+        <h5>
+            In this section we examine the scale of impact of various countries
+        </h5>
+    </div>
+</div>
+<div class="flex-grid section-vis-row" style="margin-bottom: 0%">
+    <div class="flexCol" id="globe" style="margin-left: 8%;">
         <button class="eventDateButton" id="reset" style="width: 15%"> Reset Globe</button>
         <canvas height="500" width="700">
 
@@ -458,7 +465,7 @@
 
                 <div class="col">
                     <div style="font-weight: bolder" id="eventHeader">Weather Events</div>
-                    <div style="font-size: 15px; padding-right: 10px" id ="eventCaption"> The different symbols show the type of extreme weather event.</div>
+                    <div style="font-size: 15px; margin-right: 20px" id ="eventCaption"> The different symbols show the type of extreme weather event.</div>
                 </div>
             </div>
 
@@ -472,7 +479,6 @@
 
 <!--        </Part2>-->
 
-<section class="white-bg" id="part2">
 <section class="section-template">
     <div class="section-container">
         <div class="col">
