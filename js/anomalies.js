@@ -69,12 +69,12 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
         .attr("transform", "translate(" + Math.max(-width/2, -outerRadius - 170) + "," + 0 + ")");
 
 //Append title to the top
-    textWrapper.append("text")
-        .attr("class", "spiral-title")
-        .style('fill', 'white')
-        .attr("x", 0)
-        .attr("y", -outerRadius - 40)
-        .text("Global Temperature Anomaly").style("font-weight", "bold");
+//     textWrapper.append("text")
+//         .attr("class", "spiral-title")
+//         .style('fill', 'white')
+//         .attr("x", 0)
+//         .attr("y", -outerRadius - 40)
+//         .text("Global Temperature Anomaly").style("font-weight", "bold");
 
 //Subtitle:
     textWrapper.append("text")
