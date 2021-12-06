@@ -100,8 +100,8 @@ class StackedAreaChart {
                 .style("opacity", 1)
         }
         var mousemove = function(d,i) {
-            console.log(i[i.length -1][1]/(100000000))
-            vis.Tooltip.text(i.key + ' Cumulative Emissions: ' + (i[i.length -1][1]/(100000000)).toFixed(1).toString() + " Billion tonnes of CO2e").style('font-weight','bold').style('font-size', 20)
+            console.log(((i[i.length -1][1])-(i[i.length -1][0]))/(100000))
+            vis.Tooltip.text(i.key + ' 2020 Emissions: ' + Math.round(((i[i.length -1][1])-(i[i.length -1][0]))/(100000)).toString() + " Million tonnes of CO2e").style('font-weight','bold').style('font-size', 20)
         }
         var mouseleave = function(d) {
             vis.Tooltip.style("opacity", 0)
