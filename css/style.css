@@ -182,6 +182,40 @@ var(--text-light)
   background-color: var(--bw-palette-2);
 }
 
+.tooltip h3,h4 {
+  text-align: left;
+}
+.tooltip h4 {
+  font: 14px sans-serif;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 250px;
+  height: auto;
+  padding: 3px;
+  font: 12px sans-serif;
+  background: #8a5755;
+  border-radius: 8px;
+  /*  pointer-events: none;	This line needs to be removed */
+}
+
+.tip-box {
+  border: thin solid grey;
+  border-radius: 5px;
+  background: var(--bw-palette-2);
+  padding: 20px;
+  color: white;
+  font-family: Poppins;
+}
+
+.tip-box h3 {
+  background: var(--bw-palette-2);
+  color: white;
+}
+
+
 /**/
 
 ::selection {
