@@ -1,4 +1,4 @@
-
+update('2020 CDD');
 // Variables for the visualization instances
 let areachart, timeline;
 

@@ -149,7 +149,7 @@
         </li>
         <li>
             <a href="#intro"><span class="cd-dot"></span>
-                <span class="cd-label">Why Talk About This?</span>
+                <span class="cd-label">Why Care?</span>
             </a>
         </li>
         <li>
@@ -515,7 +515,7 @@
                 </div>
             </div>
             <div class="row model-vis-row">
-                <div class="col section-col">
+                <div class="col section-col" style="color: black;">
                     <div class="row">
                         <div class="col">
                             <p>
@@ -523,15 +523,15 @@
                             <h5>
                                 In this section we examine the challenges that cities face and the cooling demands that are to be expected based on future climate proj
                             </h5>
-                                <h4><button type="button" class="btn btn1" onclick="update('2020 CDD')">Current</button>
-                                <button type="button" class="btn btn1" onclick="update('2050 CDD')">2050 Projections</button>
-                                <button type="button" class="btn btn1" onclick="update('2080 CDD')">2080 Projections</button></h4>
+                                <div class="row" style="margin-left: 21%">
+                                    <button type="button" class="btn btn1" id="btn-2020" onclick="update('2020 CDD')">Current</button>
+                                    <button type="button" class="btn btn1" id="btn-2050" onclick="update('2050 CDD')">2050 Projections</button>
+                                    <button type="button" class="btn btn1" id="btn-2080" onclick="update('2080 CDD')">2080 Projections</button></h4>
+                                </div>
 
                                 <!-- graph -->
                                 <div class="row justify-content-center" style="height: 65vh">
                                     <div id="CDD" style="padding-bottom: 100px" style="font-size:15px"></div><br>
-                                </div>
-                                <div id = "hoverReport" class="col-xs-12">
                                 </div>
                             </p>
                     

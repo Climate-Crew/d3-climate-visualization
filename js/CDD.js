@@ -19,6 +19,11 @@
 	.append("g")
 	.attr("transform", `translate(${margin1.left}, ${margin1.top})`);
 
+// Create tooltip
+	const tooltip = d3_7.select('body').append('div')
+	.attr('class', "tooltip")
+	.attr('id', 'mapTooltip')
+
 	// Initialize the X axis
 	const x = d3_7.scaleBand()
 	.range([ 0, width1+50])
@@ -58,6 +63,29 @@
 
 	// A function that create / update the plot for a given variable:
 	function update(selectedVar) {
+		if (selectedVar == '2020 CDD') {
+			d3_7.select('#btn-2020')
+				.style('background-color', '#b67472');
+		} else {
+			d3_7.select('#btn-2020')
+				.style('background-color', '#cccccc');
+		}
+
+		if (selectedVar == '2050 CDD') {
+			d3_7.select('#btn-2050')
+				.style('background-color', '#b67472');
+		} else {
+			d3_7.select('#btn-2050')
+				.style('background-color', '#cccccc');
+		}
+
+		if (selectedVar == '2080 CDD') {
+			d3_7.select('#btn-2080')
+				.style('background-color', '#b67472');
+		} else {
+			d3_7.select('#btn-2080')
+				.style('background-color', '#cccccc');
+		}
 
 	// Parse the Data
 	d3_7.csv("data/CDD_cities.csv").then( function(data) {
@@ -103,16 +131,24 @@
 			.attr("cy", function(d) { return y(d[selectedVar]); })
 			.attr("r", 20)
 			.attr("fill", "#c25d5d")
-
 			u.on("mouseover", function(d, i){
-					d3_7.select("#hoverReport").text("CDD:" + i['2020 CDD']);
-					//console.log("test", d)
-					//console.log("test2", i)
+					tooltip
+					.style("opacity", 1)
+					.style("left", d.pageX + 20 + "px")
+					.style("top", d.pageY + "px")
+					.html(`
+                         <div class='tip-box'>
+                             <h3>${i.City}<h3>
+                             <h4> Cooling Degree Days: ${i['2020 CDD']}</h4>
+                         </div>`);
 
 				})
 					.on("mouseout", function(d){
-						d3_7.select("#hoverReport").text("Toggle projections and hover on Circles")
-							.style("font-size", "17px");
+						tooltip
+							.style("opacity", 0)
+							.style("left", 0)
+							.style("top", 0)
+							.html(``);
 
 			u.on("click", function(d, i) {
 				d.pulse = !d.pulse;
