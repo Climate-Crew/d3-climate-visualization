@@ -4,7 +4,7 @@ var margin = {
     top: -230,
     right: 20,
     bottom: 0,
-    left: -700
+    left: -500
 };
 var width = window.innerWidth - margin.left - margin.right;
 var height = window.innerHeight - margin.top - margin.bottom;
@@ -39,7 +39,7 @@ d3_3.text("./data/HadCRUT.4.5.0.0.monthly_ns_avg.tsv", function(text) {
 
 
 //Set the minimum inner radius and max outer radius of the chart
-    var outerRadius = Math.min(width, height, 580)/2,
+    var outerRadius = Math.min(width, height, 550)/2,
         innerRadius = outerRadius * 0.1;  //Sets the ratio.  Smaller magnifies differences. 0.1 good, 0.15
 
 //Base the color scale on average temperature extremes
