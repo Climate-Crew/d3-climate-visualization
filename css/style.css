@@ -104,7 +104,7 @@ var(--text-light)
 }
 
 .section-col p {
-  text-align: center;
+  text-align: left;
   color: white;
   font-family: Poppins;
   font-size: 30px;
