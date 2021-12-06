@@ -28,7 +28,7 @@ The city story focuses on how changes in extreme weather
 
 ## Human Story
 
-![Human Visualization](img/city_matrix.png?raw=true "Title")
+![Human Visualization](img/human_level.png?raw=true "Title")
 
 ## Contributors
 
