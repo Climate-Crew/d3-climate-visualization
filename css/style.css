@@ -12,6 +12,7 @@
 
   --bw-palette-1 : #5d5d5d;
   --bw-palette-2 : #7f7f7f;
+  --bw-palette-3 : #d8d8d8;
 
   --cool-palette-1 : #134f5c;
   --cool-palette-2 : #45818e;
@@ -37,7 +38,7 @@ var(--text-light)
           linear-gradient(
                   to bottom,
                   transparent,
-                  lightgray
+                  var(--bw-palette-2)
           ),
           linear-gradient(
                   to right,
@@ -91,6 +92,10 @@ var(--text-light)
 
 .section-vis-row {
   background-color:  var(--bw-palette-1);
+}
+
+.model-vis-row {
+  background-color:  var(--bw-palette-3);
 }
 
 .section-col{
@@ -164,7 +169,7 @@ var(--text-light)
   margin-right: auto;
 }
 .intro-section {
-  background-color: lightgray;
+  background-color: var(--bw-palette-2);
 }
 
 /**/
@@ -594,7 +599,7 @@ body img {
   background:
           linear-gradient(
                   to bottom,
-                  lightgray,
+                  var(--bw-palette-2),
                   transparent
           ),
           linear-gradient(
