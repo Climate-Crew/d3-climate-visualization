@@ -1,13 +1,17 @@
 
 
 var margin = {
-    top: -230,
+    top: -165,
     right: 20,
     bottom: 0,
     left: -500
 };
 var width = window.innerWidth - margin.left - margin.right;
 var height = window.innerHeight - margin.top - margin.bottom;
+
+// var margin = {top: 20, right: 20, bottom: 20, left: 20};
+// var width = document.getElementById('weatherRadial').getBoundingClientRect().width - margin.left - margin.right;
+// var height = document.getElementById('weatherRadial').getBoundingClientRect().height - margin.top - margin.bottom;
 
 var domLow = -1.5,  //-15, low end of data
     domHigh = 1.25,  //30, high end of data
