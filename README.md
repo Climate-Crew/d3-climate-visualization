@@ -24,7 +24,11 @@ Our global story first discusses how global temperature anomalies have changed t
 
 The city story focuses on how changes in extreme weather 
 
+![City Visualization](img/city_matrix.png?raw=true "Title")
+
 ## Human Story
+
+![Human Visualization](img/city_matrix.png?raw=true "Title")
 
 ## Contributors
 
