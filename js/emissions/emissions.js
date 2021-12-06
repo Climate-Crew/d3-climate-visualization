@@ -87,8 +87,8 @@ class StackedAreaChart {
         // color palette
         vis.color = d3_7.scaleOrdinal()
             .domain(vis.keys)
-            //.range(customPalette)
-            .range(d3_7.schemeGreens[9]);
+            .range(customPalette)
+            //.range(d3_7.schemeGreens[9]);
 
         //stack the data?
         vis.stackedData = d3_7.stack()
