@@ -120,16 +120,14 @@ var(--text-light)
   padding-bottom: 10%;
 }
 
-.section-col h2 {
+.section-col h3 {
   font-size: 15px;
-  color: grey;
+  color: darkgrey;
   margin-bottom: 20px;
   margin-top: 20px;
   font-family: Poppins;
   text-align: center;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  padding-left: 10%;
+  padding-left: 2%;
 }
 
 .overtext {
