@@ -150,17 +150,9 @@ var(--text-light)
   position: absolute;
   font-family: Poppins;
   text-align: center;
-  top: 20 px;
+  top: 30 px;
   left: 16px;
   text-shadow: -1px 0 black, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
-}
-
-.radial-info-col {
-  width: 72%;
-}
-
-.intro-row {
-  background-color: lightgray;
 }
 
 /**/
