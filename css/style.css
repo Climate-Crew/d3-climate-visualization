@@ -121,25 +121,25 @@ var(--text-light)
 }
 
 .section-col h4 {
-  font-size: 20px;
+  font-size: 25px;
   color: #383838;
   margin-bottom: 20px;
   margin-top: 20px;
   font-family: Poppins;
   text-align: center;
-  padding-top: 3%;
+  padding-top: 1.5%;
   padding-left: 5%;
 }
 
 .section-col h5 {
-  font-size: 12px;
+  font-size: 15px;
   color: #383838;
   margin-bottom: 20px;
   margin-top: 20px;
   font-family: Poppins;
   text-align: left;
-  padding-top: 3%;
-  padding-left: 5%;
+  padding-top: 1.5%;
+  padding-left: 1.5%;
 }
 
 .overtext {
