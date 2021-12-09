@@ -10,7 +10,7 @@
 
 In recent years, we have grown used to climate records being broken on a regular basis. While this may seem unimportant at first, it is, in fact, largely attributable to climate change. As the drivers of climate change go unperturbed, the prevalence of climate records and extreme weather events is expected to increase. Through this data story, we draw upon changes in extreme weather and their impact on society at three levels of analysis: the global level, the city level, and the human level.
 
-The hosted interactive website can be found [here](https://climate-crew.github.io/d3-climate-visualization/). We hope you both enjoy our visualizations and find them enlightening!
+The hosted interactive website can be found [here](https://climate-crew.github.io/d3-climate-visualization/), along with a summary video [here](https://drive.google.com/file/d/1LYJdGfJ344T5X50EfubT-pQulHhZs9If/view). We hope you both enjoy our visualizations and find them enlightening!
 
 ## Global Story
 
